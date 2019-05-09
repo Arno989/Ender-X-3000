@@ -1,0 +1,139 @@
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+html {
+	background-color: #f8f9fb;
+	color: #2c3532;
+}
+
+::-moz-selection {
+	background: #5051db;
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: #5051db;
+	color: white;
+	text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+figcaption {
+	color: #ffcb9b;
+}
+
+hr {
+	background: LightGrey;
+}
+
+a {
+	color: #ffcb9b;
+}
+
+a:visited,
+a:active {
+	color: #ffcb9b;
+}
+
+a:hover,
+a:focus {
+	color: #ffcb9b;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+.o-card--text {
+	background-color: #f8f9fb;
+}
+
+.o-card--graph {
+	background-color: #f8f9fb;
+}
+
+/* color modifiers */
+
+.o-row--neutral-x-light {
+	background-color: #f7f7fa;
+}
+
+.o-row--gradient-1 {
+	background: linear-gradient(to top right, #5051db, #3887f7);
+	color: #fff;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+.c-nav__link {
+	border-color: #fff;
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+	color: #ffcb9b;
+}
+
+.is-selected .c-nav__link,
+.c-nav__link:hover,
+.c-nav__link:focus {
+	color: #ffcb9b;
+}
+
+.c-nav__list .is-selected .c-nav__link,
+.c-nav__icon {
+	color: #fff !important;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-theme-main {
+	color: #306f8e;
+}
+
+.u-color-theme-items {
+	color: #ffcb9b;
+}
+
+.u-color-theme-text {
+}
+
+.u-color-primary-light {
+	color: #7373f5;
+}
+
+.u-color-primary-base {
+	color: #5051db;
+}
+
+.u-color-primary-dark {
+	color: #3e3ea8;
+}
