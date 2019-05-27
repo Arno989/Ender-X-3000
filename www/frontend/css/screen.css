@@ -9,9 +9,9 @@
 */
 
 html {
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.5;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -102,7 +102,7 @@ dl,
 table,
 address,
 figure {
-	margin: 0 0 24px;
+	/*margin: 0 0 24px;*/
 }
 
 ul,
@@ -204,6 +204,13 @@ a:focus {
 	flex-direction: column;
 }
 
+.o-row--head{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
 /* size modifiers */
 
 .o-row--lg {
@@ -211,6 +218,11 @@ a:focus {
 }
 
 @media (min-width: 768px) {
+	.o-row--sm {
+		padding-left: 140px;
+		padding-right: 140px;
+	}
+
 	.o-row {
 		padding-left: 48px;
 		padding-right: 48px;
@@ -243,14 +255,14 @@ a:focus {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	max-width: 70em; /* 56.4 * 20px = 1128px */
+	max-width: 70em;
 }
 
 .o-container-head {
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 140;
+	margin-right: 140;
 	width: 100%;
-	max-width: 85em; /* 56.4 * 20px = 1128px */
+	max-width: 85em;
 }
 
 /*
@@ -424,19 +436,13 @@ a:focus {
 */
 
 .c-logo {
-	height: 32px;
+	/* height: 76px; */
 	display: flex;
 	align-items: center;
+	margin: 8px 80px
 }
 
 .c-logo__symbol {
-	height: inherit;
-}
-
-@media (min-width: 768px) {
-	.c-logo {
-		height: 40px;
-	}
 }
 
 /*
@@ -446,107 +452,25 @@ a:focus {
 */
 
 .c-header {
+	font-size: 29px;
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
+	width: 100%;
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
 
 .c-header__nav {
-	display: none;
-}
-
-@media (min-width: 992px) {
-	.c-header__logo,
-	.c-header__nav {
-		flex-grow: 1;
-		flex-basis: 50%;
-	}
-
-	.c-header__nav {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	.c-header__nav--main {
-		flex-grow: 2;
-		justify-content: center;
-	}
-
-	.c-header__mobile-nav-trigger {
-		display: none;
-	}
-}
-
-/*
-    Component: footer
-    ---
-    Main footer of the website
-*/
-
-.c-footer {
 	display: flex;
-	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.c-footer__logo {
-	width: 100%;
+.c-header__login{
+	margin: 0 80px
 }
 
-.c-footer__nav {
-	width: 50%;
-}
-
-@media (min-width: 768px) {
-	.c-footer {
-		justify-content: center;
-		align-items: center;
-	}
-
-	.c-footer__logo {
-		display: flex;
-		justify-content: center;
-		padding: 0 12px;
-	}
-
-	.c-footer__nav {
-		width: auto;
-		padding: 0 16px;
-	}
-}
-
-@media (min-width: 992px) {
-	.c-footer {
-		justify-content: space-between;
-	}
-
-	.c-footer__nav {
-		padding: 0;
-	}
-
-	.c-footer__logo + .c-footer__nav {
-		order: -1;
-	}
-
-	.c-footer__logo {
-		width: auto;
-	}
-
-	/*
-        Bonus: real centering with CSS
-        Checkout: https://css-tricks.com/centering-css-complete-guide/
-    */
-
-	/* .c-footer__logo {
-        width: auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .c-footer__logo .c-logo {
-        margin-bottom: 0;
-    } */
+.c-header__logo{
+	margin: 0 80px
 }
 
 /*
@@ -560,13 +484,9 @@ a:focus {
 	line-height: 24px;
 }
 
-.c-nav--meta {
-	font-size: 16px;
-}
-
 .c-nav__item {
 	padding: 8px 0;
-	margin: 16px;
+	margin: 0 16px;
 }
 
 .c-nav-icon {
@@ -574,35 +494,18 @@ a:focus {
 
 .c-nav__link {
 	text-decoration: none;
-	font-weight: 400;
+	font-weight: 300;
 	display: block;
-	border: 1px;
-	border-style: solid;
-	border-radius: 10px;
 }
 
-.c-nav__link,
-.c-nav__link:visited,
-.c-nav__link:active {
+.c-nav__list {
+	display: flex;
+	margin: 0;
+	margin-left: -16px;
+	margin-right: -16px;
 }
 
-.c-nav__link,
-.c-nav__link:hover,
-.c-nav__link:focus {
-	border-color: #000;
-}
 
-@media (min-width: 768px) {
-	.c-nav__list {
-		display: flex;
-		margin-left: -16px;
-		margin-right: -16px;
-	}
-
-	.c-nav__link {
-		padding: 8px 16px;
-	}
-}
 
 /*
     Component: Lead

@@ -1,10 +1,26 @@
-import unittest
+import smbus
+from time import sleep
 
+bus = 1
+lcd = 0x27
+ccs = 0x5a
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+class i2c:
+    def __init__(self, addr, port=bus):
+        self.addr = addr
+        self.bus = smbus.SMBus(port)
 
+    # single command
+    def write_cmd(self, cmd):
+        self.bus.write_byte(self.addr, cmd)
+        sleep(0.0001)
 
-if __name__ == '__main__':
-    unittest.main()
+    # command and argument
+    def write_cmd_arg(self, cmd, data):
+        self.bus.write_byte_data(self.addr, cmd, data)
+        sleep(0.0001)
+
+    # block of data
+    def write_block_data(self, cmd, data):
+        self.bus.write_block_data(self.addr, cmd, data)
+        sleep(0.0001)

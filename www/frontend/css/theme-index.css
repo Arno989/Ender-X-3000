@@ -3,8 +3,8 @@
 \*------------------------------------*/
 
 html {
-	background-color: #106466;
-	color: #2c3532;
+	background-color: #F8F9FB;
+	color: #2F4455;
 }
 
 ::-moz-selection {
@@ -30,7 +30,6 @@ html {
 */
 
 figcaption {
-	color: #ffcb9b;
 }
 
 hr {
@@ -38,17 +37,17 @@ hr {
 }
 
 a {
-	color: #ffcb9b;
+	color: #2F4455;
 }
 
 a:visited,
 a:active {
-	color: #ffcb9b;
+	color: #B7494E;
 }
 
 a:hover,
 a:focus {
-	color: #ffcb9b;
+	text-shadow: 0 0 4px rgb(42,145,229,0.5);
 }
 
 /*------------------------------------*\
@@ -75,7 +74,6 @@ a:focus {
 \*------------------------------------*/
 
 .c-nav__link {
-	border-color: #fff;
 }
 
 /*
@@ -87,18 +85,18 @@ a:focus {
 .c-nav__link,
 .c-nav__link:visited,
 .c-nav__link:active {
-	color: #ffcb9b;
+	color: #2F4455;
 }
 
 .is-selected .c-nav__link,
 .c-nav__link:hover,
 .c-nav__link:focus {
-	color: #ffcb9b;
+	text-shadow: #2A91E5 1px 0.5 4px;
 }
 
 .c-nav__list .is-selected .c-nav__link,
 .c-nav__icon {
-	color: #fff !important;
+	color: #B7494E !important;
 }
 
 /*------------------------------------*\

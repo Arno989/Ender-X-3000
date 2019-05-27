@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always">
+  <component name="PublishConfigData" autoUpload="Always" serverName="pi@arno989:22">
     <serverData>
       <paths name="dp-user@arno989:22">
         <serverdata>
@@ -9,7 +9,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="rpi-arno">
+      <paths name="pi@arno989:22">
         <serverdata>
           <mappings>
             <mapping deploy="/datacom" local="$PROJECT_DIR$" web="/" />

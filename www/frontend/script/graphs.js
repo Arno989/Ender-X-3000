@@ -69,7 +69,7 @@ const showPrinterTemp = jsonObject => {
 							lineWidth: 0.5
 						},
 						ticks: {
-							max: 230,
+							max: 250,
 							stepSize: 20,
 							suggestedMin: 0,
 							suggestedMax: 100
@@ -139,7 +139,7 @@ const showHumidity = jsonObject => {
 							lineWidth: 0.5
 						},
 						ticks: {
-							min: -10,
+							min: 0,
 							max: 100,
 							stepSize: 10,
 							suggestedMin: 0,

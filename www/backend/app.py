@@ -57,7 +57,7 @@ def user(username):
 def printerTemp():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM printerTemp")
+            result = conn.get_data("SELECT * FROM (SELECT * FROM printertemp ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC LIMIT 11;")
             print("result")
             return jsonify(result), 200
         except :
