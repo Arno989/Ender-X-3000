@@ -10,23 +10,8 @@ class DataHandler:
         try:
             self.cursor.execute("INSERT INTO data (sensor, value) VALUES (%s, %s)", (sensor, data))
             self.conn.commit()
-            print("Saved sensor {}={} to database".format(data, sensor))
+            print("Saved sensor '{}' with value '{}' to database".format(sensor, data))
             return True
         except Exception as e:
             print("DB update failed: {!s}".format(e))
             return False
-
-'''
-#sensors
-
-tb = temp bed
-th = temp hotend
-ta = temp ambient
-tf = temp fillament
-
-hp = humidity printer
-hf = humidity filament
-
-co = co2
-tv = tvoc
-'''

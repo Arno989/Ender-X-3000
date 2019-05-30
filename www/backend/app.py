@@ -10,6 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 conn = Database(app=app, user='root', password='root', db='site')
+# conn = Database(app=app, user='sensoruser', password='sensoruser', db='site')
 
 # Custom endpoint
 endpoint = '/api/v1'
@@ -20,13 +21,16 @@ endpoint = '/api/v1'
 tb = temp bed
 th = temp hotend
 ta = temp ambient
+tbg = temp bed goal
+thg = temp hotend goal
+tag = temp ambient goal
 tp = temp fillament
 
 hp = humidity printer
 hf = humidity fillament
 
-co = co2
-tv = tvoc
+co2 = co2
+tvo = tvoc
 '''
 
 
@@ -72,7 +76,8 @@ def user(username):
 def printerTemp():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM (SELECT * FROM printertemp ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC LIMIT 11;")
+            # result = conn.get_data("SELECT * FROM (SELECT * FROM printertemp ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC LIMIT 11;")
+            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'th' ORDER BY timestamp DESC LIMIT 11) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'ta' ORDER BY timestamp DESC LIMIT 11) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'tb' ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC;")
             print("result")
             return jsonify(result), 200
         except :
@@ -82,7 +87,7 @@ def printerTemp():
 def printerHumid():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM humidity")
+            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'hp' ORDER BY timestamp DESC LIMIT 100) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'hf' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
             return jsonify(result), 200
         except :
             return jsonify(error=Exception), 400
@@ -91,7 +96,7 @@ def printerHumid():
 def printerGas():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM printerGas")
+            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'co2' ORDER BY timestamp DESC LIMIT 100) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'tvo' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
             return jsonify(result), 200
         except :
             return jsonify(error=Exception), 400
@@ -100,7 +105,7 @@ def printerGas():
 def fillamentTemp():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM fillamentTemp")
+            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'tf' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
             return jsonify(result), 200
         except :
             return jsonify(error=Exception), 400

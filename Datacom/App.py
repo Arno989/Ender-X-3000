@@ -7,10 +7,12 @@ from modules.SaveData import DataHandler
 
 from RPi import GPIO
 from time import sleep
+import serial
 from subprocess import check_output
 
 TCST2103 = 12
 relais = 17
+port = "/dev/ttyUSB0"
 
 CCS811 = CCS811()
 DS18B20 = OneWire()
@@ -19,7 +21,34 @@ LCD = I2C_LCD()
 printerdht = DHT11(pin=13)
 filamentdht = DHT11(pin=19)
 
+s1 = serial.Serial(port, 115200)
+
+sleep(2)
+s1.flushInput()
+
 database = DataHandler("site", "sensoruser", "sensoruser")
+
+
+def write_serial(command):
+    s1.write('{}\n'.format(command).encode())
+    read_serial()
+
+
+def read_serial():
+    if s1.inWaiting() > 0:
+        while s1.inWaiting() > 0:
+            inputValue = s1.readline()
+            if inputValue.decode().strip():
+                print(inputValue.decode().strip())
+
+
+def read_printertemps():
+    s1.write('M105 ?\n'.encode())
+    s = str(s1.readline().decode())
+
+    delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
+    s = list(map(float, s.translate(delchars).strip().split(' ')))
+    return s
 
 
 def read_ambient_temp():
@@ -58,34 +87,51 @@ try:
     init()
 
     while True:
-        if read_ambient_temp():
-            # database.save_data('ta', read_ambient_temp())
-            print("Ambient Temperature: ", read_ambient_temp(), " °C")
+        readingprn = read_printertemps()
+        if read_printertemps():
+            database.save_data('th', readingprn[0])
+            print("Hotend Temperature: ", readingprn[0], " °C")
+            sleep(1)
+            database.save_data('tb', readingprn[2])
+            print("Bed Temperature: ", readingprn[2], " °C")
+        else:
+            print("No reading Printer")
+
+        readingamb = read_ambient_temp()
+        if readingamb:
+            database.save_data('ta', readingamb)
+            sleep(0.5)
+            print("Ambient Temperature: ", readingamb, " °C")
         else:
             print("No reading OneWire")
 
-        if printerdht.getData():
-            # database.save_data('hp', printerdht.getData()['humidity'])
-            print("Printer Humidity: ", printerdht.getData()['humidity'], "%")
+        readingdht1 = filamentdht.getData()
+        if readingdht1:
+            database.save_data('hp', readingdht1['humidity'])
+            sleep(0.5)
+            print("Printer Humidity: ", readingdht1['humidity'], "%")
         else:
             print("No reading DHT1")
 
-        if filamentdht.getData():
-            # database.save_data('hf', filamentdht.getData()['humidity'])
-            print("Filament Humidity: ", filamentdht.getData()['humidity'], "%")
+        readingdht2 = filamentdht.getData()
+        if readingdht2:
+            database.save_data('hf', readingdht2['humidity'])
+            sleep(0.5)
+            print("Filament Humidity: ", readingdht2['humidity'], "%")
         else:
             print("No reading DHT2")
 
-        readings = read_CCS811()
-        if readings:
-            # database.save_data('co', readings[0])
-            print("CO2: ", readings[0])
-            # database.save_data('tv', readings[1])
-            print("TVOC: ", readings[1])
+        readingccs = read_CCS811()
+        if readingccs:
+            database.save_data('co2', readingccs[0])
+            print("CO2: ", readingccs[0])
+            sleep(1)  # timestamp is PK
+            database.save_data('tvo', readingccs[1])
+            print("TVOC: ", readingccs[1])
         else:
             print("No reading CCS811")
 
-        sleep(.001)
+        sleep(1)
         print("-----")
         pass
 

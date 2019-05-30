@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938c3ca7-05e7-4c25-bb83-47c84d4a937e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/Datacom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/Datacom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/DHT11.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/DHT11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/OneWire.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/OneWire.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datamanagement/site.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datamanagement/site.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datamanagement/site.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datamanagement/site.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/SaveData.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/SaveData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+            <state relative-caret-position="1008">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
                 <element signature="e#10#66#0" expanded="true" />
               </folding>
@@ -58,6 +51,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -69,7 +63,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -147,21 +140,22 @@
       <workItem from="1558962743127" duration="447000" />
       <workItem from="1559048928610" duration="1538000" />
       <workItem from="1559115073706" duration="649000" />
+      <workItem from="1559220654087" duration="5433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7622000" />
+    <option name="totallyTimeSpent" value="13055000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26972282" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2718601" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39130434" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39061257" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -184,13 +178,13 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backend$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1559115077943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backend$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1559226557392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="1008">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
           <folding>
             <element signature="e#10#66#0" expanded="true" />
           </folding>

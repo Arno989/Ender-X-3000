@@ -14,12 +14,17 @@ const showPrinterTemp = jsonObject => {
 	};
 
 	for (const i of jsonObject) {
+		console.log(jsonObject);
 		const timestamp = new Date(i.timestamp);
 		json.labels.push(`${timestamp.getHours()}:${String(timestamp.getMinutes()).padStart(2, '0')}`);
 
-		json.data.enclosure.push(i.enclosure);
-		json.data.bed.push(i.bed);
-		json.data.hotend.push(i.hotend);
+		if (i.sensor == 'ta') {
+			json.data.enclosure.push(i.value);
+		} else if (i.sensor == 'tb') {
+			json.data.bed.push(i.value);
+		} else if (i.sensor == 'th') {
+			json.data.hotend.push(i.value);
+		}
 	}
 
 	var printerTemp = document.getElementById('printerTemp').getContext('2d');
@@ -32,19 +37,22 @@ const showPrinterTemp = jsonObject => {
 					label: 'Enclosure',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(255, 99, 132)',
-					data: json.data.enclosure
+					data: json.data.enclosure,
+					spanGaps: true
 				},
 				{
 					label: 'Bed',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(66, 179, 244)',
-					data: json.data.bed
+					data: json.data.bed,
+					spanGaps: true
 				},
 				{
 					label: 'Hotend',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(86, 244, 65)',
-					data: json.data.hotend
+					data: json.data.hotend,
+					spanGaps: true
 				}
 			]
 		},
@@ -94,8 +102,13 @@ const showHumidity = jsonObject => {
 		const timestamp = new Date(i.timestamp);
 		json.labels.push(`${timestamp.getHours()}:${String(timestamp.getMinutes()).padStart(2, '0')}`);
 
-		json.data.printer.push(i.printer);
-		json.data.fillament.push(i.fillament);
+		if (i.sensor == 'hp') {
+			json.data.printer.push(i.value);
+			json.data.fillament.push(null);
+		} else if (i.sensor == 'hf') {
+			json.data.printer.push(null);
+			json.data.fillament.push(i.value);
+		}
 	}
 
 	var humidity = document.getElementById('humidity').getContext('2d');
@@ -108,13 +121,15 @@ const showHumidity = jsonObject => {
 					label: 'Printer',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(255, 99, 132)',
-					data: json.data.printer
+					data: json.data.printer,
+					spanGaps: true
 				},
 				{
 					label: 'Fillament',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(66, 179, 244)',
-					data: json.data.fillament
+					data: json.data.fillament,
+					spanGaps: true
 				}
 			]
 		},
@@ -165,8 +180,11 @@ const showGasData = jsonObject => {
 		const timestamp = new Date(i.timestamp);
 		json.labels.push(`${timestamp.getHours()}:${String(timestamp.getMinutes()).padStart(2, '0')}`);
 
-		json.data.co2.push(i.co2);
-		json.data.tvoc.push(i.tvoc);
+		if (i.sensor == 'co2') {
+			json.data.co2.push(i.value);
+		} else if (i.sensor == 'tvo') {
+			json.data.tvoc.push(i.value);
+		}
 	}
 
 	var tvoc = document.getElementById('tvoc').getContext('2d');
@@ -180,14 +198,16 @@ const showGasData = jsonObject => {
 					yAxisID: 'A',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(255, 99, 132)',
-					data: json.data.co2
+					data: json.data.co2,
+					spanGaps: true
 				},
 				{
 					label: 'TVOC',
 					yAxisID: 'B',
 					backgroundColor: 'rgb(255, 255, 255, 0)',
 					borderColor: 'rgb(66, 179, 244)',
-					data: json.data.tvoc
+					data: json.data.tvoc,
+					spanGaps: true
 				}
 			]
 		},
