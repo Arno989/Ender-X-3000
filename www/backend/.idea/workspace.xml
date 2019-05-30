@@ -2,37 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938c3ca7-05e7-4c25-bb83-47c84d4a937e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Datacom/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Datacom/test/I2C.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Datacom/test/V-DHT11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Datacom/test/V-OneWire.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/Datacom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/Datacom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/PWM.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/PWM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/test/DHT11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/test/DS18B20.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/test/LCD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/test/PWM.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/test/V-TCST2103.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/test/V-TCST2103.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/DHT11.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/DHT11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/OneWire.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/OneWire.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datamanagement/site.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datamanagement/site.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datamanagement/site.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datamanagement/site.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/screen-old.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/theme-controls.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/theme-database.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/theme-files.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/theme-graph.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/theme-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/css/theme-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pages/database.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/database.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pages/graphs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/graphs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pages/printFiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/printFiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pages/printerControls.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/printerControls.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/script/graphs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/script/graphs.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="65" lean-forward="true" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+            <state>
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding>
                 <element signature="e#10#66#0" expanded="true" />
               </folding>
@@ -77,7 +58,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -89,6 +69,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,22 +144,25 @@
       <workItem from="1557689376377" duration="343000" />
       <workItem from="1558804875601" duration="3131000" />
       <workItem from="1558880692997" duration="93000" />
+      <workItem from="1558962743127" duration="447000" />
+      <workItem from="1559048928610" duration="1538000" />
+      <workItem from="1559115073706" duration="649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4988000" />
+    <option name="totallyTimeSpent" value="7622000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26152623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26972282" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3293556" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39130434" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -200,13 +184,13 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backend$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1558880704572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backend$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1559115077943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="65" lean-forward="true" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+        <state>
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="e#10#66#0" expanded="true" />
           </folding>

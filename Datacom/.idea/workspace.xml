@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a26cfe4-d647-4e9b-943b-ec73f0f3f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/CCS811.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/DHT11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/OneWire.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/I2C.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../www/backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/I2C_LCD.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/SaveData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ccs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/dbtest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/serial comm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Datacom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Datacom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/PWM.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/PWM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DHT11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DS18B20.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/LCD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PWM.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/V-Relais.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/V-TCST2103.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CCS811.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CCS811.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/DHT11.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DHT11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/OneWire.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/OneWire.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/I2C.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/LCD.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Datamanagement/site.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Datamanagement/site.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Datamanagement/site.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Datamanagement/site.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../www/backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../www/backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../www/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../www/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/screen-old.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/theme-controls.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/theme-database.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/theme-files.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/theme-graph.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/css/theme-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/css/theme-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/pages/database.html" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/pages/database.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/pages/graphs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/pages/graphs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/pages/printFiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/pages/printFiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/pages/printerControls.html" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/pages/printerControls.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/frontend/script/graphs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../www/frontend/script/graphs.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,55 +31,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/LCD.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/I2C.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/CCS811.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-648">
+              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modules/OneWire.py">
+        <entry file="file://$PROJECT_DIR$/test/serial comm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="32" column="98" lean-forward="true" selection-start-line="32" selection-start-column="98" selection-end-line="32" selection-end-column="98" />
+            <state relative-caret-position="223">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/DHT11.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/SaveData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -131,15 +102,23 @@
         <option value="$PROJECT_DIR$/test/I2C.py" />
         <option value="$PROJECT_DIR$/modules/V-DHT11.py" />
         <option value="$PROJECT_DIR$/test/CCS811.py" />
+        <option value="$PROJECT_DIR$/modules/klasse_I2C.py" />
+        <option value="$PROJECT_DIR$/modules/I2C_LCD.py" />
+        <option value="$PROJECT_DIR$/modules/OneWire.py" />
+        <option value="$PROJECT_DIR$/test/ccs.py" />
+        <option value="$PROJECT_DIR$/test/tyest.py" />
+        <option value="$PROJECT_DIR$/modules/DHT11.py" />
+        <option value="$PROJECT_DIR$/modules/CCS811.py" />
+        <option value="$PROJECT_DIR$/modules/SaveData.py" />
         <option value="$PROJECT_DIR$/App.py" />
+        <option value="$PROJECT_DIR$/test/serial comm.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1416" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -149,7 +128,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,10 +140,16 @@
               <item name="Datacom" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Datacom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Datacom" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,7 +179,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.App">
+  <component name="RunManager" selected="Python.serial comm">
     <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,7 +202,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CCS811" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="CCS811 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -226,12 +210,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Arno\OneDrive - Hogeschool West-Vlaanderen\Project 1\Git\Ender-X-3000\Datacom\modules\CCS811.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/CCS811.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,7 +224,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="DHT11" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="ccs" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -253,7 +237,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Arno\OneDrive - Hogeschool West-Vlaanderen\Project 1\Git\Ender-X-3000\Datacom\modules\DHT11.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/ccs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,7 +246,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="PWM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="serial comm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -275,7 +259,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/PWM.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/serial comm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,7 +268,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="V-TCST2103" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tyest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -297,7 +281,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Arno\OneDrive - Hogeschool West-Vlaanderen\Project 1\Git\Ender-X-3000\Datacom\test\V-TCST2103.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Arno\OneDrive - Hogeschool West-Vlaanderen\Project 1\Git\Ender-X-3000\Datacom\test\dbtest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,11 +292,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.serial comm" />
         <item itemvalue="Python.App" />
-        <item itemvalue="Python.CCS811" />
-        <item itemvalue="Python.DHT11" />
-        <item itemvalue="Python.PWM" />
-        <item itemvalue="Python.V-TCST2103" />
+        <item itemvalue="Python.ccs" />
+        <item itemvalue="Python.tyest" />
+        <item itemvalue="Python.CCS811 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -332,29 +316,34 @@
       <workItem from="1558810030541" duration="780000" />
       <workItem from="1558871024373" duration="6750000" />
       <workItem from="1558882843306" duration="6597000" />
+      <workItem from="1559034682020" duration="1567000" />
+      <workItem from="1559048282021" duration="6194000" />
+      <workItem from="1559130225119" duration="6235000" />
+      <workItem from="1559150726909" duration="2324000" />
+      <workItem from="1559202948315" duration="9925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27661000" />
+    <option name="totallyTimeSpent" value="53906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12877584" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13354531" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32856005" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3731106" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.32856005" />
+      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.32696897" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32998884" />
@@ -396,16 +385,20 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Datacom$CCS811__1_.coverage" NAME="CCS811 (1) Coverage Results" MODIFIED="1559133322818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
+    <SUITE FILE_PATH="coverage/Datacom$tyest.coverage" NAME="tyest Coverage Results" MODIFIED="1559153942549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Datacom$RHT03__1_.coverage" NAME="RHT03 (1) Coverage Results" MODIFIED="1557219455758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
+    <SUITE FILE_PATH="coverage/Datacom$ccs.coverage" NAME="ccs Coverage Results" MODIFIED="1559207844292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Datacom$PWM.coverage" NAME="PWM Coverage Results" MODIFIED="1558874156258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Datacom$OneWire.coverage" NAME="OneWire Coverage Results" MODIFIED="1558871976275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Datacom$App.coverage" NAME="App Coverage Results" MODIFIED="1559211379354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Datacom$serial_comm.coverage" NAME="serial comm Coverage Results" MODIFIED="1559218730639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$V_TCST2103.coverage" NAME="V-TCST2103 Coverage Results" MODIFIED="1558872227254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$CCS811.coverage" NAME="CCS811 Coverage Results" MODIFIED="1558884620988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Datacom$RHT03__1_.coverage" NAME="RHT03 (1) Coverage Results" MODIFIED="1557219455758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/Datacom$RHT03.coverage" NAME="RHT03 Coverage Results" MODIFIED="1557222772124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Data Communication/Week 6" />
-    <SUITE FILE_PATH="coverage/Datacom$PWM.coverage" NAME="PWM Coverage Results" MODIFIED="1558874156258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$DHT11.coverage" NAME="DHT11 Coverage Results" MODIFIED="1558877501353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Datacom$OneWire.coverage" NAME="OneWire Coverage Results" MODIFIED="1558871976275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$TCST2103.coverage" NAME="TCST2103 Coverage Results" MODIFIED="1557216887753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$Relais.coverage" NAME="Relais Coverage Results" MODIFIED="1557223576639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Datacom$App.coverage" NAME="App Coverage Results" MODIFIED="1558887745142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/modules/RHT03.py" />
@@ -422,20 +415,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/DHT11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/V-TCST2103.py" />
+    <entry file="file://$PROJECT_DIR$/test/V-Relais.py" />
     <entry file="file://$PROJECT_DIR$/test/LCD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="576">
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -446,50 +431,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/V-TCST2103.py">
+    <entry file="file://$PROJECT_DIR$/modules/I2C_LCD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="13" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/CCS811.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/V-Relais.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/OneWire.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="32" column="98" lean-forward="true" selection-start-line="32" selection-start-column="98" selection-end-line="32" selection-end-column="98" />
+        <state relative-caret-position="737">
+          <caret line="57" column="79" selection-start-line="57" selection-start-column="79" selection-end-line="57" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Etc/Tijl/AirPi/sensor/sensor2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="73" column="31" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ccs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dbtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/CCS811.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/DHT11.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/SaveData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/serial comm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

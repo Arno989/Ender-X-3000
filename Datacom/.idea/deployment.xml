@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="pi@arno989:22">
+  <component name="PublishConfigData" autoUpload="Always" serverName="arno@arno989:22">
     <serverData>
+      <paths name="arno@arno989:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/arno/project" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="dp-user@arno989:22">
         <serverdata>
           <mappings>
@@ -12,7 +19,7 @@
       <paths name="pi@arno989:22">
         <serverdata>
           <mappings>
-            <mapping deploy="/datacom" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

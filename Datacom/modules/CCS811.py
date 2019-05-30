@@ -21,10 +21,10 @@ class CCS811:
         tvoc = []
 
         try:
-            while teller < 150:
+            while teller < 10:
                 if ccs.available():
                     if not ccs.readData():
-                        print("CO2: ", ccs.geteCO2(), "ppm, TVOC: ", ccs.getTVOC())
+                        # print("CO2: ", ccs.geteCO2(), "ppm, TVOC: ", ccs.getTVOC())
                         if teller > 2:
                             co2.append(ccs.geteCO2())
                             tvoc.append(ccs.getTVOC())
@@ -33,9 +33,7 @@ class CCS811:
                         teller += 1
                     else:
                         print("ERROR! {0}".format(time()))
-                        while True:
-                            pass
-                sleep(1)
+                    sleep(0.001)
         except IOError as e:
             "I/O error({0}): {1}".format(e.errno, e.strerror)
             co2.append(1000)

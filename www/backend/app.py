@@ -14,6 +14,21 @@ conn = Database(app=app, user='root', password='root', db='site')
 # Custom endpoint
 endpoint = '/api/v1'
 
+'''
+#sensors
+
+tb = temp bed
+th = temp hotend
+ta = temp ambient
+tp = temp fillament
+
+hp = humidity printer
+hf = humidity fillament
+
+co = co2
+tv = tvoc
+'''
+
 
 # ROUTES
 @app.route(endpoint + '/')

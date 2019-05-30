@@ -56,7 +56,7 @@ class OneWire:
                         var = line[karakter+2:] # +2 zodat naam weg is
                     except:
                         raise ValueError("Variable {0} not found!".format(var))
-            print(var)
+            return var
 
 '''
 def main():
