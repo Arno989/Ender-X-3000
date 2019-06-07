@@ -17,7 +17,9 @@ port = "/dev/ttyUSB0"
 CCS811 = CCS811()
 DS18B20 = OneWire()
 LCD = I2C_LCD()
-
+R = PWM(16)
+G = PWM(20)
+B = PWM(21)
 printerdht = DHT11(pin=13)
 filamentdht = DHT11(pin=19)
 
@@ -77,6 +79,14 @@ def init():
 
     GPIO.setmode(GPIO.BCM)
 
+    R.InitPWM()
+    G.InitPWM()
+    B.InitPWM()
+
+    R.ChangeDutyCycle(80)
+    G.ChangeDutyCycle(80)
+    B.ChangeDutyCycle(80)
+
     GPIO.setup(TCST2103, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(relais, GPIO.OUT)
 
@@ -87,49 +97,64 @@ try:
     init()
 
     while True:
-        readingprn = read_printertemps()
-        if read_printertemps():
-            database.save_data('th', readingprn[0])
-            print("Hotend Temperature: ", readingprn[0], " °C")
-            sleep(1)
-            database.save_data('tb', readingprn[2])
-            print("Bed Temperature: ", readingprn[2], " °C")
-        else:
-            print("No reading Printer")
+        try:
+            readingprn = read_printertemps()
+            if read_printertemps():
+                database.save_data('th', readingprn[0])
+                print("Hotend Temperature: ", readingprn[0], " °C")
+                sleep(1)
+                database.save_data('tb', readingprn[2])
+                print("Bed Temperature: ", readingprn[2], " °C")
+            else:
+                print("No reading Printer")
+        except:
+            print("Serial error")
 
-        readingamb = read_ambient_temp()
-        if readingamb:
-            database.save_data('ta', readingamb)
-            sleep(0.5)
-            print("Ambient Temperature: ", readingamb, " °C")
-        else:
-            print("No reading OneWire")
+        try:
+            readingamb = read_ambient_temp()
+            if readingamb:
+                database.save_data('ta', readingamb)
+                sleep(0.5)
+                print("Ambient Temperature: ", readingamb, " °C")
+            else:
+                print("No reading OneWire")
+        except:
+            print("onewire error")
 
-        readingdht1 = filamentdht.getData()
-        if readingdht1:
-            database.save_data('hp', readingdht1['humidity'])
-            sleep(0.5)
-            print("Printer Humidity: ", readingdht1['humidity'], "%")
-        else:
-            print("No reading DHT1")
+        try:
+            readingdht1 = filamentdht.getData()
+            if readingdht1:
+                database.save_data('hp', readingdht1['humidity'])
+                sleep(0.5)
+                print("Printer Humidity: ", readingdht1['humidity'], "%")
+            else:
+                print("No reading DHT1")
+        except:
+            print("dht1 error")
 
-        readingdht2 = filamentdht.getData()
-        if readingdht2:
-            database.save_data('hf', readingdht2['humidity'])
-            sleep(0.5)
-            print("Filament Humidity: ", readingdht2['humidity'], "%")
-        else:
-            print("No reading DHT2")
+        try:
+            readingdht2 = filamentdht.getData()
+            if readingdht2:
+                database.save_data('hf', readingdht2['humidity'])
+                sleep(0.5)
+                print("Filament Humidity: ", readingdht2['humidity'], "%")
+            else:
+                print("No reading DHT2")
+        except:
+            print("dht2 error")
 
-        readingccs = read_CCS811()
-        if readingccs:
-            database.save_data('co2', readingccs[0])
-            print("CO2: ", readingccs[0])
-            sleep(1)  # timestamp is PK
-            database.save_data('tvo', readingccs[1])
-            print("TVOC: ", readingccs[1])
-        else:
-            print("No reading CCS811")
+        try:
+            readingccs = read_CCS811()
+            if readingccs:
+                database.save_data('co2', readingccs[0])
+                print("CO2: ", readingccs[0])
+                sleep(1)  # timestamp is PK
+                database.save_data('tvo', readingccs[1])
+                print("TVOC: ", readingccs[1])
+            else:
+                print("No reading CCS811")
+        except:
+            print("ccs error")
 
         sleep(1)
         print("-----")

@@ -1,5 +1,4 @@
 from RPi import GPIO
-import time
 
 class PWM():
     def __init__(self, pin):
@@ -7,9 +6,8 @@ class PWM():
 
     def InitPWM(self):
         GPIO.setup(self.pin, GPIO.OUT)
-        self.pwm = GPIO.PWM(self.pin, 100)
+        self.pwm = GPIO.PWM(self.pin, 1000)
         self.pwm.start(100)
 
     def ChangeDutyCycle(self, value):
         self.pwm.ChangeDutyCycle(value)
-        time.sleep(2)

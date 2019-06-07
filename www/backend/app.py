@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 conn = Database(app=app, user='root', password='root', db='site')
-# conn = Database(app=app, user='sensoruser', password='sensoruser', db='site')
+# conn = Database(app=app, user='sensoruser', password='sensoruser', db='site', host="192.168.2.158")
 
 # Custom endpoint
 endpoint = '/api/v1'

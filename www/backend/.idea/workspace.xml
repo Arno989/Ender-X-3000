@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938c3ca7-05e7-4c25-bb83-47c84d4a937e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Datacom/test/pwmtest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/SaveData.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/SaveData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/PWM.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/modules/PWM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/pages/database.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/pages/graphs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/graphs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/pages/printDetection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/pages/printFiles.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/pages/printerControls.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,13 +24,39 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set>
+        <option value="collation" />
+      </set>
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="site@192.168.2.158" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="site@192.168.2.158" type="feb32156:DbDataSourceImpl" />
+        <item name="site: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="144">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#10#66#0" expanded="true" />
               </folding>
@@ -66,6 +102,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Data Communication" />
@@ -141,21 +178,25 @@
       <workItem from="1559048928610" duration="1538000" />
       <workItem from="1559115073706" duration="649000" />
       <workItem from="1559220654087" duration="5433000" />
+      <workItem from="1559241257141" duration="1547000" />
+      <workItem from="1559296025821" duration="611000" />
+      <workItem from="1559636458811" duration="600000" />
+      <workItem from="1559725975021" duration="787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13055000" />
+    <option name="totallyTimeSpent" value="16600000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2718601" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.282516" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39061257" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39018953" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -171,20 +212,43 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32942432" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backend$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1559226557392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backend$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1559726165074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="uml://DATABASE/b34aade0-1b69-4e19-8310-fdd7fac345e2.SCHEMA:site">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>b34aade0-1b69-4e19-8310-fdd7fac345e2.SCHEMA:site</OriginalElement>
+          <nodes>
+            <node x="" y="">b34aade0-1b69-4e19-8310-fdd7fac345e2.TABLE:site.data</node>
+            <node x="" y="">b34aade0-1b69-4e19-8310-fdd7fac345e2.TABLE:site.user</node>
+            <node x="" y="">b34aade0-1b69-4e19-8310-fdd7fac345e2.TABLE:site.printer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="87.0" y="202.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b34aade0-1b69-4e19-8310-fdd7fac345e2/console.sql" />
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="144">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#10#66#0" expanded="true" />
           </folding>

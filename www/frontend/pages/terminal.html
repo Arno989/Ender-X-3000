@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Printer Graphs</title>
+		<title>Terminal</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" />
@@ -18,8 +18,6 @@
 		<script src="/script/checklogin.js"></script>
 
 		<!-- custom scripts -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-		<script src="/script/graphs.js"></script>
 	</head>
 
 	<body>
@@ -93,9 +91,9 @@
 						<nav class="c-nav">
 							<ul class="o-list c-nav__list u-m-clear">
 								<li class="c-nav__item"><a class="c-nav__link" href="/index.html">Home</a></li>
-								<li class="c-nav__item is-selected"><a class="c-nav__link" href="/pages/graphs.html">Graphs</a></li>
+								<li class="c-nav__item"><a class="c-nav__link" href="/pages/graphs.html">Graphs</a></li>
 								<li class="c-nav__item"><a class="c-nav__link" href="/pages/controls.html">Controls</a></li>
-								<li class="c-nav__item"><a class="c-nav__link" href="/pages/terminal.html">Terminal</a></li>
+								<li class="c-nav__item is-selected"><a class="c-nav__link" href="/pages/terminal.html">Terminal</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -109,53 +107,5 @@
 				</div>
 			</div>
 		</header>
-
-		<section class="o-row o-row--lg u-pt-clear">
-			<div class="o-container">
-				<div class="o-layout o-layout--align-center">
-					<article class="o-section">
-						<div class="o-layout o-layout--gutter o-layout--align-start">
-							<div class="o-layout__item u-1-of-2">
-								<div class="o-graph">
-									<h2>Temperatures</h2>
-									<div>
-										<canvas id="printerTemp" width="760px" height="410px"></canvas>
-									</div>
-									<!-- <div class="o-list o-layout o-layout--justify-space-between ">
-										<div class="o-layout-item c-lead--m"><p class="u-mb-clear">Hotend goal: 210°C</p></div>
-										<div class="o-layout-item c-lead--m"><p class="u-mb-clear">Bed goal: 60°C</p></div>
-										<div class="o-layout-item c-lead--m"><p class="u-mb-clear">Enclosure goal: 40°C - 50°C</p></div>
-									</div> -->
-								</div>
-							</div>
-							<div class="o-layout__item u-1-of-2">
-								<div class="o-graph">
-									<h2>Humidities</h2>
-									<div>
-										<canvas id="humidity" width="760px" height="410px"></canvas>
-									</div>
-									<!-- <div class="o-list o-layout o-layout--justify-center ">
-										<div class="o-layout-item c-lead--m"><p class="u-mb-clear">Optimal value: 0%</p></div>
-									</div> -->
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<article class="o-section u-1-of-1">
-						<div class="o-layout o-layout--gutter o-layout--align-start">
-							<div class="o-layout__item u-1-of-1">
-								<div class="o-graph">
-									<h2>Gasses</h2>
-									<div>
-										<canvas id="tvoc" width="760px" height="410px"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
 	</body>
 </html>

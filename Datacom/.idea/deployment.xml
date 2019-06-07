@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="arno@arno989:22">
     <serverData>
+      <paths name="arno@169.254.10.1:22">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="arno@arno989:22">
         <serverdata>
           <mappings>
@@ -16,7 +23,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="pi@arno989:22">
+      <paths name="rpi-arno">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

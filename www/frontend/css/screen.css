@@ -12,14 +12,12 @@ html {
 	font-size: 18px;
 	line-height: 1.5;
 	font-family: 'Roboto', sans-serif;
+	color: #2f4455;
+	background-color: #f8f9fb;
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-}
-
-.has-mobile-nav {
-	overflow: hidden;
 }
 
 *,
@@ -28,19 +26,24 @@ html {
 	box-sizing: inherit;
 }
 
-@media (min-width: 768px) {
-	html {
-		font-size: 20px;
-		line-height: 1.6;
-	}
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
  *
  * Customize the background color to match your design.
  */
+
+::-moz-selection {
+	background: #2a91e5;
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: #2a91e5;
+	color: white;
+	text-shadow: none;
+}
 
 /*------------------------------------*\
   #Elements
@@ -102,7 +105,7 @@ dl,
 table,
 address,
 figure {
-	/*margin: 0 0 24px;*/
+	margin: 0 0 24px;
 }
 
 ul,
@@ -137,59 +140,28 @@ figcaption {
 hr {
 	border: 0;
 	height: 1px;
+	background: LightGrey;
 	margin: 0 0 24px;
 }
 
 a {
-	transition: all 0.1s ease;
+	color: #2f4455;
+	transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
+	color: #b7494e;
 }
 
 a:hover,
 a:focus {
+	text-shadow: 0 0 4px rgb(42, 145, 229, 0.5);
 }
 
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
-
-.o-card--graph {
-	padding: 32px 16px;
-}
-
-.o-card--text {
-	padding: 8% 32px;
-	font-weight: 300;
-	font-size: 18px;
-}
-
-.u-3-of-5 > .o-card--text {
-	padding: 8% 48px;
-}
-
-.o-card--image {
-	max-height: 600px;
-	overflow: hidden;
-	border-radius: 20px;
-}
-
-.u-2-of-5 > .o-card--image {
-	max-height: 800px;
-}
-
-.o-card__left {
-	border-radius: 10px 0 0 10px;
-}
-
-.o-card__right {
-	border-radius: 0 10px 10px 0;
-}
-
-.o-card__image {
-}
 
 /*
     Objects: Row
@@ -204,25 +176,26 @@ a:focus {
 	flex-direction: column;
 }
 
-.o-row--head{
+/* size modifiers */
+
+.o-row--head {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 
-/* size modifiers */
-
 .o-row--lg {
-	padding: 48px 24px 24px;
+	padding-top: 48px;
+	padding-bottom: 24px;
+}
+
+.o-row--xl {
+	padding-top: 72px;
+	padding-bottom: 48px;
 }
 
 @media (min-width: 768px) {
-	.o-row--sm {
-		padding-left: 140px;
-		padding-right: 140px;
-	}
-
 	.o-row {
 		padding-left: 48px;
 		padding-right: 48px;
@@ -239,10 +212,16 @@ a:focus {
 	}
 }
 
-/* padding clear modifiers */
+@media (min-width: 992px) {
+	.o-row--intro {
+		padding-top: 72px;
+		padding-bottom: 72px;
+	}
 
-.o-row--clear-top {
-	padding-top: 0;
+	.o-row--xl {
+		padding-top: 96px;
+		padding-bottom: 72px;
+	}
 }
 
 /*
@@ -255,14 +234,7 @@ a:focus {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	max-width: 70em;
-}
-
-.o-container-head {
-	margin-left: 140;
-	margin-right: 140;
-	width: 100%;
-	max-width: 85em;
+	max-width: 90em;
 }
 
 /*
@@ -272,16 +244,14 @@ a:focus {
 */
 
 .o-section {
-	display: -webkit-flex;
-	display: -ms-flex;
 	display: flex;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
 	flex-direction: column;
+	width: 100%;
+	margin-top: 75px;
 }
 
 .o-section + .o-section {
-	margin-top: 24px;
+	margin-top: 34px;
 }
 
 @media (min-width: 768px) {
@@ -306,8 +276,6 @@ a:focus {
 */
 
 .o-layout {
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -340,6 +308,22 @@ a:focus {
 
 .o-layout--gutter-lg > .o-layout__item {
 	padding: 0 24px;
+}
+
+.o-layout--gutter-xl {
+	margin: 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+	padding: 0 48px;
+}
+
+.o-layout--gutter-xxl {
+	margin: 0 -64px;
+}
+
+.o-layout--gutter-xxl > .o-layout__item {
+	padding: 0 64px;
 }
 
 /* reverse horizontal row modifier */
@@ -392,7 +376,7 @@ a:focus {
 	align-items: baseline;
 }
 
-/* Vertical alignment modifiers that only work if there is one than one flex item */
+/* Vertical alignment modifiers that only work if there is more than one flex item */
 
 .o-layout--align-content-start {
 	align-content: start;
@@ -412,6 +396,21 @@ a:focus {
 
 .o-layout--align-content-space-between {
 	align-content: space-between;
+}
+
+/*
+    Objects: text
+*/
+.o-text-left {
+	text-align: left;
+}
+
+.o-text-right {
+	text-align: right;
+}
+
+.o-text-center {
+	text-align: center;
 }
 
 /*
@@ -436,13 +435,14 @@ a:focus {
 */
 
 .c-logo {
-	/* height: 76px; */
+	height: 32px;
 	display: flex;
 	align-items: center;
-	margin: 8px 80px
+	margin: 8px 80px;
 }
 
 .c-logo__symbol {
+	height: 100%;
 }
 
 /*
@@ -452,25 +452,32 @@ a:focus {
 */
 
 .c-header {
-	font-size: 29px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	align-items: center;
 	width: 100%;
-	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+	height: 60px;
 }
 
 .c-header__nav {
-	display: flex;
-	justify-content: center;
+	display: none;
 }
 
-.c-header__login{
-	margin: 0 80px
+@media (min-width: 992px) {
+	.c-header__nav {
+		display: block;
+		justify-content: center;
+	}
 }
 
-.c-header__logo{
-	margin: 0 80px
+.c-header__login {
+	margin: 0 80px;
+}
+
+.c-header__logo {
+	margin: 0 80px;
 }
 
 /*
@@ -489,23 +496,129 @@ a:focus {
 	margin: 0 16px;
 }
 
-.c-nav-icon {
-}
-
 .c-nav__link {
 	text-decoration: none;
 	font-weight: 300;
 	display: block;
 }
 
-.c-nav__list {
-	display: flex;
-	margin: 0;
-	margin-left: -16px;
-	margin-right: -16px;
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+	color: #2f4455;
 }
 
+.is-selected .c-nav__link,
+.c-nav__link:hover,
+.c-nav__link:focus {
+	text-shadow: #2a91e5 1px 0.5 4px;
+}
 
+.c-nav__list .is-selected .c-nav__link,
+.c-nav__icon {
+	color: #b7494e;
+}
+
+@media (min-width: 992px) {
+	.c-nav__list {
+		display: flex;
+	}
+
+	.c-nav__item--cta {
+		/* margin-left: 20px; */
+	}
+
+	.c-nav__link {
+		/* padding: 8px ; */
+	}
+}
+
+/*
+    Component: video
+*/
+
+.c-video {
+}
+
+.c-video--lg {
+}
+
+/*
+    Component: controls
+*/
+
+.c-controls {
+	min-width: 222px;
+}
+
+.c-control-title {
+	padding-left: 24px;
+}
+
+.c-button--distance{
+	border: none;
+	color: #2f4455;
+	background-color: white;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+	height: 46px;
+	width: 70px;
+	font-size: 21px;
+	font-weight: 200;
+	margin: 0 6px;
+}
+
+.c-button--control{
+	border: none;
+	color: #2f4455;
+	background-color: white;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+	height: 46px;
+	font-size: 16px;
+	font-weight: 200;
+	margin: 6px 0;
+}
+
+.c-file {
+	color: #2f4455;
+	background-color: white;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+	font-size: 16px;
+	font-weight: 200;
+}
+
+.c-file--bottom{
+	color: #2f4455;
+	background-color: white;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+	font-size: 16px;
+	font-weight: 200;
+	margin: 6px 0;
+}
+
+.c-file--content {
+	padding: 18px;
+}
+
+.c-file--title {
+	font-size: 18px;
+	font-weight: 300;
+	padding-left: 8px;
+}
+
+.c-file--time {
+	font-size: 14px;
+	padding-right: 12px;
+}
+
+.c-file--data{
+	font-size: 12px;
+	font-weight: 300;
+	padding-left: 32px;
+}
+
+.c-file--icon {
+	margin: 4px;
+}
 
 /*
     Component: Lead
@@ -514,86 +627,51 @@ a:focus {
 */
 
 .c-lead {
-	font-weight: 200;
+	position: relative;
 }
 
-.c-lead--s {
-	font-size: 12px;
-	line-height: 24px;
-}
-
-.c-lead--m {
-	font-size: 16px;
-	line-height: 28px;
+.c-lead--md {
+	font-size: 18px;
+	line-height: 32px;
 }
 
 .c-lead--lg {
-	font-size: 20px;
+	font-size: 24px;
 	line-height: 32px;
 }
 
 .c-lead--xl {
-	font-size: 26px;
-	line-height: 32px;
-}
-
-.c-lead--xxl {
-	font-size: 32px;
+	font-size: 30px;
 	line-height: 40px;
 }
 
-.c-lead--xxxl {
-	font-size: 36px;
-	line-height: 48px;
-}
-
 @media (min-width: 768px) {
-	.c-lead--lg {
-		font-size: 23px;
-		line-height: 32px;
-	}
-
 	.c-lead--xl {
-		font-size: 32px;
-		line-height: 40px;
-	}
-
-	.c-lead--xxl {
 		font-size: 41px;
 		line-height: 48px;
-	}
-
-	.c-lead--xxxl {
-		font-size: 52px;
-		line-height: 64px;
 	}
 }
 
 @media (min-width: 1200px) {
-	.c-lead--lg {
-		font-size: 26px;
-		line-height: 36px;
-	}
-
 	.c-lead--xl {
-		font-size: 36px;
-		line-height: 48px;
-	}
-
-	.c-lead--xxl {
 		font-size: 52px;
 		line-height: 64px;
-	}
-
-	.c-lead--xxxl {
-		font-size: 66px;
-		line-height: 72px;
 	}
 }
 
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-main-red {
+	color: #b7494e;
+}
 
 /*
     Utilities: spacing
@@ -603,6 +681,14 @@ a:focus {
 
 .u-pt-clear {
 	padding-top: 0 !important;
+}
+
+.u-pt-xl {
+	padding-top: 60px !important;
+}
+
+.u-m-clear {
+	margin: 0 !important;
 }
 
 .u-mb-clear {
@@ -636,23 +722,19 @@ a:focus {
 */
 
 .u-max-width-xs {
-	max-width: 18em !important;
+	max-width: 22em !important;
 }
 
 .u-max-width-sm {
-	max-width: 36em !important;
+	max-width: 26em !important;
 }
 
 .u-max-width-md {
-	max-width: 42em !important;
+	max-width: 36em !important;
 }
 
 .u-max-width-lg {
-	max-width: 60em !important;
-}
-
-.u-max-width-xl {
-	max-width: 75em !important;
+	max-width: 50em !important;
 }
 
 .u-max-width-none {
@@ -670,7 +752,7 @@ a:focus {
 	width: auto !important;
 }
 
-.u-1-of-1 {
+.u-width-100 {
 	width: 100% !important;
 }
 
@@ -893,3 +975,69 @@ a:focus {
 /* Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
 */
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		/* Black prints faster: http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: ' (' attr(href) ')';
+	}
+	abbr[title]:after {
+		content: ' (' attr(title) ')';
+	}
+	/*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+	a[href^='#']:after,
+	a[href^='javascript:']:after {
+		content: '';
+	}
+	pre {
+		white-space: pre-wrap !important;
+	}
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	/*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+	thead {
+		display: table-header-group;
+	}
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
