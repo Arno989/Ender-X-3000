@@ -8,10 +8,13 @@ zmqsocket = context.socket(zmq.REP)
 zmqsocket.bind("tcp://127.0.0.1:7777")
 
 # setup serial communication with printer
-port = "/dev/ttyUSB0"
-s1 = serial.Serial(port, 115200)
-sleep(2)
-s1.flushInput()
+try:
+    port = "/dev/ttyUSB0"
+    s1 = serial.Serial(port, 115200)
+    sleep(2)
+    s1.flushInput()
+except Exception as e:
+    print(e)
 
 delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
 
@@ -58,17 +61,20 @@ while True:
 
 
     print("send: ", '{}\n'.format(gcode).encode())
-    s1.write('{}\n'.format(gcode).encode())
-    sleep(0.02)
+    try:
+        s1.write('{}\n'.format(gcode).encode())
+        sleep(0.02)
 
-    if s1.inWaiting() > 0:
-        inputValue = s1.readline()
-        s = str(inputValue.decode())
-        if s.strip():
-            print("ack: ", s.strip())
-            if s.strip() == "ok":
-                zmqsocket.send(s.strip())
-            else:
-                s = list(map(float, s.translate(delchars).strip().split(' ')))
-                zmqsocket.send(s)
+        if s1.inWaiting() > 0:
+            inputValue = s1.readline()
+            s = str(inputValue.decode())
+            if s.strip():
+                print("ack: ", s.strip())
+                if s.strip() == "ok":
+                    zmqsocket.send(s.strip())
+                else:
+                    s = list(map(float, s.translate(delchars).strip().split(' ')))
+                    zmqsocket.send(s)
+    except Exception as e:
+        print(e)
 

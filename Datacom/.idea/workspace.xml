@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a26cfe4-d647-4e9b-943b-ec73f0f3f508" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SerialCommunication.py" beforeDir="false" afterPath="$PROJECT_DIR$/SerialCommunication.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../www/backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../www/backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../www/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../www/backend/app.py" afterDir="false" />
     </list>
@@ -28,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SerialCommunication.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="500">
+              <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#678#940#0" />
@@ -83,11 +84,12 @@
         <option value="$PROJECT_DIR$/test/pwmtest.py" />
         <option value="$PROJECT_DIR$/App.py" />
         <option value="$PROJECT_DIR$/SearialCommunication.py" />
+        <option value="$PROJECT_DIR$/SerialCommunication.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1928" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -292,15 +294,15 @@
       <workItem from="1559636415944" duration="5853000" />
       <workItem from="1560154637461" duration="8262000" />
       <workItem from="1560170335250" duration="1221000" />
-      <workItem from="1560239379860" duration="4987000" />
+      <workItem from="1560239379860" duration="5062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87933000" />
+    <option name="totallyTimeSpent" value="88008000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10341151" />
@@ -315,7 +317,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="9" visible="true" weight="0.3277592" />
+      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.3277592" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32998884" />
@@ -484,8 +486,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SerialCommunication.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="500">
+          <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#678#940#0" />
