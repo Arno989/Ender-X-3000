@@ -7,9 +7,12 @@ import zmq
 from modules.database import Database
 
 # setup zmq socket client
-context = zmq.Context()
-zmqsocket = context.socket(zmq.REQ)
-zmqsocket.connect("tcp://127.0.0.1:7777")
+try:
+    context = zmq.Context()
+    zmqsocket = context.socket(zmq.REQ)
+    zmqsocket.connect("tcp://127.0.0.1:7777")
+except Exception as e:
+    print(e)
 
 # Start app and socket
 app = Flask(__name__)
@@ -204,7 +207,7 @@ def fanoff():
 
 # Start app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
 
 
 

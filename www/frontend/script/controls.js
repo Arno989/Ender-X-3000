@@ -1,8 +1,8 @@
 'use strict';
 
-const socket_IP = 'localhost';
+const socket_IP = `${window.location.host}:5000`;
 
-let socket
+let socket;
 
 var distance = 10;
 //#region ***********  Callback - HTML Generation (After select) ***********
@@ -98,12 +98,12 @@ const listenToControls = () => {
 
 //#region ***********  INIT / DOMContentLoaded ***********
 const enableSocketIo = () => {
-	socket = io(`http://${socket_IP}:5000`);
+	socket = io(`http://${socket_IP}`);
 };
 
 const init = function() {
-	console.log("bitch ass")
-	enableSocketIo()
+	console.log('bitch ass');
+	enableSocketIo();
 	listenToControls();
 };
 
