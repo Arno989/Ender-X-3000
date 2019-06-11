@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a26cfe4-d647-4e9b-943b-ec73f0f3f508" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SerialCommunication.py" beforeDir="false" afterPath="$PROJECT_DIR$/SerialCommunication.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../www/backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../www/backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../www/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../www/backend/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +29,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SerialCommunication.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+            <state relative-caret-position="236">
+              <caret line="79" column="41" lean-forward="true" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#678#940#0" />
               </folding>
             </state>
           </provider>
@@ -127,7 +126,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -148,7 +147,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SearialCommunication">
+  <component name="RunManager" selected="Python.SerialCommunication">
     <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,7 +192,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ccs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="SerialCommunication" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Datacom" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,12 +200,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/ccs.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SerialCommunication.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -261,11 +260,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SerialCommunication" />
         <item itemvalue="Python.SearialCommunication" />
         <item itemvalue="Python.App" />
         <item itemvalue="Python.pwmtest" />
         <item itemvalue="Python.serial comm" />
-        <item itemvalue="Python.ccs" />
       </list>
     </recent_temporary>
   </component>
@@ -294,12 +293,12 @@
       <workItem from="1559636415944" duration="5853000" />
       <workItem from="1560154637461" duration="8262000" />
       <workItem from="1560170335250" duration="1221000" />
-      <workItem from="1560239379860" duration="5062000" />
+      <workItem from="1560239379860" duration="7635000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88008000" />
+    <option name="totallyTimeSpent" value="90581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -310,7 +309,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15496098" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37458193" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,6 +374,7 @@
     <SUITE FILE_PATH="coverage/Datacom$DHT11.coverage" NAME="DHT11 Coverage Results" MODIFIED="1558877501353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$TCST2103.coverage" NAME="TCST2103 Coverage Results" MODIFIED="1557216887753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Datacom$Relais.coverage" NAME="Relais Coverage Results" MODIFIED="1557223576639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Datacom$SerialCommunication.coverage" NAME="SerialCommunication Coverage Results" MODIFIED="1560260177464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/modules/RHT03.py" />
@@ -486,11 +486,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SerialCommunication.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+        <state relative-caret-position="236">
+          <caret line="79" column="41" lean-forward="true" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#678#940#0" />
           </folding>
         </state>
       </provider>

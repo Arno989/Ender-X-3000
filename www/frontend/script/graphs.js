@@ -3,6 +3,8 @@ Chart.defaults.global.elements.point.radius = 0;
 Chart.defaults.global.elements.line.borderWidth = 2;
 Chart.defaults.global.legend.position = 'top';
 
+const socket_IP = `${window.location.host}:5000`;
+
 const showPrinterTemp = jsonObject => {
 	let json = {
 		labels: [],
@@ -259,15 +261,15 @@ const showGasData = jsonObject => {
 };
 
 const getPrinterTempData = () => {
-	handleData(`http://127.0.0.1:5000/api/v1/data/printer/temp`, showPrinterTemp);
+	handleData(`http://${socket_IP}/api/v1/data/printer/temp`, showPrinterTemp);
 };
 
 const getHumidityData = () => {
-	handleData(`http://127.0.0.1:5000/api/v1/data/humid`, showHumidity);
+	handleData(`http://${socket_IP}/api/v1/data/humid`, showHumidity);
 };
 
 const getGasData = () => {
-	handleData(`http://127.0.0.1:5000/api/v1/data/printer/gas`, showGasData);
+	handleData(`http://${socket_IP}/api/v1/data/printer/gas`, showGasData);
 };
 
 document.addEventListener('DOMContentLoaded', function() {

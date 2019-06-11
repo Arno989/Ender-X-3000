@@ -12,7 +12,7 @@
       <paths name="arno@arno989:22">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/arno/project" local="$PROJECT_DIR$" />
+            <mapping deploy="/home/arno/Ender-X-3000/Datacom" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
