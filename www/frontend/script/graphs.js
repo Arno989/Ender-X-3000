@@ -272,6 +272,14 @@ const getGasData = () => {
 	handleData(`http://${socket_IP}/api/v1/data/printer/gas`, showGasData);
 };
 
+const initSocketConnection = function () {
+    socket = io(`http://${socket_IP}:5000`);
+    socket.on('refresh', function (data) {
+            
+        }
+    )
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM geladen');
 	getPrinterTempData();

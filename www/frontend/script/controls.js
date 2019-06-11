@@ -10,7 +10,10 @@ var distance = 10;
 //#endregion
 
 //#region ***********  Data Access ***********
-
+const enablestream = () => {
+	const element = document.querySelector('.js-video');
+	element.setAttribute('src', `${window.location.host}:8080/0/stream`);
+};
 //#endregion
 
 //#region ***********  Event Listeners ***********

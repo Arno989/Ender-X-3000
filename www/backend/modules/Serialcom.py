@@ -1,31 +1,22 @@
 import serial
 from time import sleep
-import zmq
-import json
 
-# setup zmq socket server
-context = zmq.Context()
-zmqsocket = context.socket(zmq.REP)
-zmqsocket.bind("tcp://127.0.0.1:7777")
 
-# setup serial communication with printer
-try:
-    port = "/dev/ttyUSB0"
-    s1 = serial.Serial(port, 115200)
-    sleep(2)
-    s1.flushInput()
-except Exception as e:
-    print(e)
+class Serialcom:
 
-delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
-
-while True:
-    try:
+    def __init__(self):
         try:
-            c = json.loads(zmqsocket.recv().decode())
+            port = "/dev/ttyUSB0"
+            self.s1 = serial.Serial(port, 115200)
+            sleep(2)
+            self.s1.flushInput()
         except Exception as e:
-            print('zmq Socket Error: ', e)
-            c = {'command': 'M105 ?'}
+            print(e)
+
+        self.delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
+
+    def send_command(self, c):
+
         print(c)
         command = c["command"]
 
@@ -66,25 +57,22 @@ while True:
             print("no known command or 'command' is null")
             gcode = c['command']
 
-
         print("send: ", '{}\n'.format(gcode).encode())
         try:
-            s1.write('{}\n'.format(gcode).encode())
+            self.s1.write('{}\n'.format(gcode).encode())
             sleep(0.02)
 
-            if s1.inWaiting() > 0:
-                inputValue = s1.readline()
+            if self.s1.inWaiting() > 0:
+                inputValue = self.s1.readline()
                 s = str(inputValue.decode())
                 if s.strip():
                     print("ack: ", s.strip())
                     if s.strip() == "ok":
-                        zmqsocket.send_string(s.strip())
+                        return s.strip()
                     else:
-                        s = list(map(float, s.translate(delchars).strip().split(' ')))
-                        zmqsocket.send_string(s)
+                        s = list(map(float, s.translate(self.delchars).strip().split(' ')))
+                        return s
         except Exception as e:
             print('Response Decoding Error: ', e)
-    except Exception as e:
-        sleep(1)
-        print('Common Error: ', e)
 
+# setup serial communication with printer

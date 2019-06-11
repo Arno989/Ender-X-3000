@@ -2,17 +2,10 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_socketio import SocketIO
-import zmq
+from modules.sensor import Sensor
+from modules.Serialcom import Serialcom
 
 from modules.database import Database
-
-# setup zmq socket client
-try:
-    context = zmq.Context()
-    zmqsocket = context.socket(zmq.REQ)
-    zmqsocket.connect("tcp://127.0.0.1:7777")
-except Exception as e:
-    print(e)
 
 # Start app and socket
 app = Flask(__name__)
@@ -21,7 +14,8 @@ CORS(app)
 
 # conn = Database(app=app, user='root', password='root', db='site')
 conn = Database(app=app, user='sensoruser', password='sensoruser', db='site')  # , host="192.168.2.158"
-
+serial = Serialcom()
+sensors = Sensor(conn, serial)
 # Custom endpoint
 endpoint = '/api/v1'
 
@@ -45,7 +39,8 @@ tvo = tvoc
 # ROUTES
 @app.route(endpoint + '/')
 def index():
-        return 'index'
+    return 'index'
+
 
 @app.route(endpoint + '/users', methods=['POST', 'GET'])
 def users():
@@ -57,7 +52,7 @@ def users():
             user_password = result['password']
 
             added_user_id = conn.set_data("INSERT INTO user (username, password) VALUES (%s, %s)", [user_username, user_password])
-            return jsonify(userID = added_user_id), 201
+            return jsonify(userID=added_user_id), 201
 
         except Exception as e:
             return jsonify(error=Exception), 400
@@ -66,60 +61,64 @@ def users():
         try:
             result = conn.get_data("SELECT username FROM user")
             return jsonify(result), 200
-        except :
+        except:
             return jsonify(error=Exception), 400
 
 
-@app.route(endpoint + '/users/<username>',  methods=['GET', 'PUT', 'DELETE'])
+@app.route(endpoint + '/users/<username>', methods=['GET', 'PUT', 'DELETE'])
 def user(username):
     if request.method == 'GET':
         try:
             result = conn.get_data("SELECT * FROM user where username = (%s)", username)
             return jsonify(result), 200
-        except :
+        except:
             return jsonify(error=Exception), 400
 
 
-@app.route(endpoint + '/data/printer/temp',  methods=['GET'])
+@app.route(endpoint + '/data/printer/temp', methods=['GET'])
 def printerTemp():
     if request.method == 'GET':
         try:
             # result = conn.get_data("SELECT * FROM (SELECT * FROM printertemp ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC LIMIT 11;")
-            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'th' ORDER BY timestamp DESC LIMIT 11) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'ta' ORDER BY timestamp DESC LIMIT 11) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'tb' ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC;")
+            result = conn.get_data(
+                "SELECT * FROM (SELECT * FROM data WHERE sensor = 'th' ORDER BY timestamp DESC LIMIT 11) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'ta' ORDER BY timestamp DESC LIMIT 11) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'tb' ORDER BY timestamp DESC LIMIT 11) SQ ORDER BY timestamp ASC;")
             print("result")
             return jsonify(result), 200
-        except :
+        except:
             return jsonify(error=Exception), 400
 
 
-@app.route(endpoint + '/data/humid',  methods=['GET'])
+@app.route(endpoint + '/data/humid', methods=['GET'])
 def printerHumid():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'hp' ORDER BY timestamp DESC LIMIT 100) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'hf' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
+            result = conn.get_data(
+                "SELECT * FROM (SELECT * FROM data WHERE sensor = 'hp' ORDER BY timestamp DESC LIMIT 100) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'hf' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
             return jsonify(result), 200
-        except :
+        except:
             return jsonify(error=Exception), 400
 
 
-@app.route(endpoint + '/data/printer/gas',  methods=['GET'])
+@app.route(endpoint + '/data/printer/gas', methods=['GET'])
 def printerGas():
     if request.method == 'GET':
         try:
-            result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'co2' ORDER BY timestamp DESC LIMIT 100) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'tvo' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
+            result = conn.get_data(
+                "SELECT * FROM (SELECT * FROM data WHERE sensor = 'co2' ORDER BY timestamp DESC LIMIT 100) SQ UNION SELECT * FROM (SELECT * FROM data WHERE sensor = 'tvo' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
             return jsonify(result), 200
-        except :
+        except:
             return jsonify(error=Exception), 400
 
 
-@app.route(endpoint + '/data/fillament/temp',  methods=['GET'])
+@app.route(endpoint + '/data/fillament/temp', methods=['GET'])
 def fillamentTemp():
     if request.method == 'GET':
         try:
             result = conn.get_data("SELECT * FROM (SELECT * FROM data WHERE sensor = 'tf' ORDER BY timestamp DESC LIMIT 100) SQ ORDER BY timestamp ASC;")
             return jsonify(result), 200
-        except :
+        except:
             return jsonify(error=Exception), 400
+
 
 # socket events
 @socketio.on('connect')
@@ -129,93 +128,85 @@ def logConnect():
 
 @socketio.on('xy-up')
 def mvxyup(distance):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'y', 'value': distance})
+    serial.send_command({'command': 'G1', 'axis': 'y', 'value': distance})
     socketio.emit('ack')
 
 
 @socketio.on('xy-left')
 def mvxyleft(distance):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'x', 'value': distance, 'negative': True})
+    serial.send_command({'command': 'G1', 'axis': 'x', 'value': distance, 'negative': True})
     socketio.emit('ack')
 
 
 @socketio.on('xy-home')
 def mvxyhome(distance):
-    zmqsocket.send_json({'command': 'G28', 'axis': 'xy', 'value': distance})
+    serial.send_command({'command': 'G28', 'axis': 'xy', 'value': distance})
     socketio.emit('ack')
 
 
 @socketio.on('xy-right')
 def mvxyright(distance):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'x', 'value': distance})
+    serial.send_command({'command': 'G1', 'axis': 'x', 'value': distance})
     socketio.emit('ack')
 
 
 @socketio.on('xy-down')
 def mvxydown(distance):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'y', 'value': distance, 'negative': True})
+    serial.send_command({'command': 'G1', 'axis': 'y', 'value': distance, 'negative': True})
     socketio.emit('ack')
 
 
 @socketio.on('z-up')
 def mvzup(distance):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'z', 'value': distance})
+    serial.send_command({'command': 'G1', 'axis': 'z', 'value': distance})
     socketio.emit('ack')
 
 
 @socketio.on('z-home')
 def mvzhome(distance):
-    zmqsocket.send_json({'command': 'G28', 'axis': 'z', 'value': distance})
+    serial.send_command({'command': 'G28', 'axis': 'z', 'value': distance})
     socketio.emit('ack')
 
 
 @socketio.on('z-down')
 def mvzdown(distance):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'z', 'value': distance, 'negative': True})
+    serial.send_command({'command': 'G1', 'axis': 'z', 'value': distance, 'negative': True})
     socketio.emit('ack')
 
 
 @socketio.on('extrude')
 def extrude(value):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'e', 'value': value})
+    serial.send_command({'command': 'G1', 'axis': 'e', 'value': value})
     socketio.emit('ack')
 
 
 @socketio.on('retract')
 def retract(value):
-    zmqsocket.send_json({'command': 'G1', 'axis': 'e', 'value': value, 'negative': True})
+    serial.send_command({'command': 'G1', 'axis': 'e', 'value': value, 'negative': True})
     socketio.emit('ack')
 
 
 @socketio.on('motorsoff')
 def motorsoff():
-    zmqsocket.send_json({'command': 'M18'})
+    serial.send_command({'command': 'M18'})
     socketio.emit('ack')
 
 
 @socketio.on('fanon')
 def fanon():
-    zmqsocket.send_json({'command': 'M106'})
+    serial.send_command({'command': 'M106'})
     socketio.emit('ack')
 
 
 @socketio.on('fanoff')
 def fanoff():
-    zmqsocket.send_json({'command': 'M107'})
+    serial.send_command({'command': 'M107'})
     socketio.emit('ack')
 
 
 # Start app
 if __name__ == '__main__':
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
-
-
-
-
-
-
-
-
 
 '''
     elif request.method == 'PUT':

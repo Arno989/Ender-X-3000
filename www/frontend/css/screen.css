@@ -542,9 +542,8 @@ a:focus {
 */
 
 .c-video {
+	width: 100%;
 }
-
-
 
 /*
     Component: controls
@@ -558,7 +557,7 @@ a:focus {
 	padding-left: 24px;
 }
 
-.c-button--distance{
+.c-button--distance {
 	border: none;
 	color: #2f4455;
 	background-color: white;
@@ -571,7 +570,7 @@ a:focus {
 	cursor: pointer;
 }
 
-.c-button--control{
+.c-button--control {
 	border: none;
 	color: #2f4455;
 	background-color: white;
@@ -591,7 +590,7 @@ a:focus {
 	box-shadow: inset 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 
-.c-button--pointer{
+.c-button--pointer {
 	cursor: pointer;
 }
 
@@ -603,7 +602,7 @@ a:focus {
 	font-weight: 200;
 }
 
-.c-file--bottom{
+.c-file--bottom {
 	color: #2f4455;
 	background-color: white;
 	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
@@ -627,7 +626,7 @@ a:focus {
 	padding-right: 12px;
 }
 
-.c-file--data{
+.c-file--data {
 	font-size: 12px;
 	font-weight: 300;
 	padding-left: 32px;
