@@ -7,12 +7,16 @@ from modules.SaveData import DataHandler
 
 from RPi import GPIO
 from time import sleep
-import serial
 from subprocess import check_output
+import zmq
+
+# setup zmq socket client
+context = zmq.Context()
+zmqsocket = context.socket(zmq.REQ)
+zmqsocket.connect("tcp://127.0.0.1:7777")
 
 TCST2103 = 12
 relais = 17
-port = "/dev/ttyUSB0"
 
 CCS811 = CCS811()
 DS18B20 = OneWire()
@@ -23,34 +27,20 @@ B = PWM(21)
 printerdht = DHT11(pin=13)
 filamentdht = DHT11(pin=19)
 
-s1 = serial.Serial(port, 115200)
-
-sleep(2)
-s1.flushInput()
-
 database = DataHandler("site", "sensoruser", "sensoruser")
 
 
 def write_serial(command):
-    s1.write('{}\n'.format(command).encode())
-    read_serial()
-
-
-def read_serial():
-    if s1.inWaiting() > 0:
-        while s1.inWaiting() > 0:
-            inputValue = s1.readline()
-            if inputValue.decode().strip():
-                print(inputValue.decode().strip())
+    zmqsocket.send(command)
+    r = zmqsocket.recv()
+    return r
 
 
 def read_printertemps():
-    s1.write('M105 ?\n'.encode())
-    s = str(s1.readline().decode())
-
-    delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
-    s = list(map(float, s.translate(delchars).strip().split(' ')))
-    return s
+    zmqsocket.send('M105 ?')
+    t = zmqsocket.recv()
+    if t != 'ok':
+        return t
 
 
 def read_ambient_temp():
@@ -99,7 +89,7 @@ try:
     while True:
         try:
             readingprn = read_printertemps()
-            if read_printertemps():
+            if readingprn:
                 database.save_data('th', readingprn[0])
                 print("Hotend Temperature: ", readingprn[0], " °C")
                 sleep(1)

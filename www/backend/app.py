@@ -1,23 +1,28 @@
 # Imports
-from flask import Flask, jsonify, request, url_for, json
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+from flask_socketio import SocketIO
+import zmq
 
-# Custom imports
-from database import Database
+from modules.database import Database
 
-# Start app
+# setup zmq socket client
+context = zmq.Context()
+zmqsocket = context.socket(zmq.REQ)
+zmqsocket.connect("tcp://127.0.0.1:7777")
+
+# Start app and socket
 app = Flask(__name__)
+socketio = SocketIO(app)
 CORS(app)
 
-conn = Database(app=app, user='root', password='root', db='site')
-# conn = Database(app=app, user='sensoruser', password='sensoruser', db='site', host="192.168.2.158")
+# conn = Database(app=app, user='root', password='root', db='site')
+conn = Database(app=app, user='sensoruser', password='sensoruser', db='site')  # , host="192.168.2.158"
 
 # Custom endpoint
 endpoint = '/api/v1'
 
 '''
-#sensors
-
 tb = temp bed
 th = temp hotend
 ta = temp ambient
@@ -61,6 +66,7 @@ def users():
         except :
             return jsonify(error=Exception), 400
 
+
 @app.route(endpoint + '/users/<username>',  methods=['GET', 'PUT', 'DELETE'])
 def user(username):
     if request.method == 'GET':
@@ -69,7 +75,6 @@ def user(username):
             return jsonify(result), 200
         except :
             return jsonify(error=Exception), 400
-
 
 
 @app.route(endpoint + '/data/printer/temp',  methods=['GET'])
@@ -83,6 +88,7 @@ def printerTemp():
         except :
             return jsonify(error=Exception), 400
 
+
 @app.route(endpoint + '/data/humid',  methods=['GET'])
 def printerHumid():
     if request.method == 'GET':
@@ -91,6 +97,7 @@ def printerHumid():
             return jsonify(result), 200
         except :
             return jsonify(error=Exception), 400
+
 
 @app.route(endpoint + '/data/printer/gas',  methods=['GET'])
 def printerGas():
@@ -101,6 +108,7 @@ def printerGas():
         except :
             return jsonify(error=Exception), 400
 
+
 @app.route(endpoint + '/data/fillament/temp',  methods=['GET'])
 def fillamentTemp():
     if request.method == 'GET':
@@ -110,9 +118,99 @@ def fillamentTemp():
         except :
             return jsonify(error=Exception), 400
 
+# socket events
+@socketio.on('connect')
+def logConnect():
+    print("connected")
+
+
+@socketio.on('xy-up')
+def mvxyup(distance):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'y', 'value': distance})
+    socketio.emit('ack')
+
+
+@socketio.on('xy-left')
+def mvxyleft(distance):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'x', 'value': distance, 'negative': True})
+    socketio.emit('ack')
+
+
+@socketio.on('xy-home')
+def mvxyhome(distance):
+    zmqsocket.send_json({'command': 'G28', 'axis': 'xy', 'value': distance})
+    socketio.emit('ack')
+
+
+@socketio.on('xy-right')
+def mvxyright(distance):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'x', 'value': distance})
+    socketio.emit('ack')
+
+
+@socketio.on('xy-down')
+def mvxydown(distance):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'y', 'value': distance, 'negative': True})
+    socketio.emit('ack')
+
+
+@socketio.on('z-up')
+def mvzup(distance):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'z', 'value': distance})
+    socketio.emit('ack')
+
+
+@socketio.on('z-home')
+def mvzhome(distance):
+    zmqsocket.send_json({'command': 'G28', 'axis': 'z', 'value': distance})
+    socketio.emit('ack')
+
+
+@socketio.on('z-down')
+def mvzdown(distance):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'z', 'value': distance, 'negative': True})
+    socketio.emit('ack')
+
+
+@socketio.on('extrude')
+def extrude(value):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'e', 'value': value})
+    socketio.emit('ack')
+
+
+@socketio.on('retract')
+def retract(value):
+    zmqsocket.send_json({'command': 'G1', 'axis': 'e', 'value': value, 'negative': True})
+    socketio.emit('ack')
+
+
+@socketio.on('motorsoff')
+def motorsoff():
+    zmqsocket.send_json({'command': 'M18'})
+    socketio.emit('ack')
+
+
+@socketio.on('fanon')
+def fanon():
+    zmqsocket.send_json({'command': 'M106'})
+    socketio.emit('ack')
+
+
+@socketio.on('fanoff')
+def fanoff():
+    zmqsocket.send_json({'command': 'M107'})
+    socketio.emit('ack')
+
+
 # Start app
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
 
 
 

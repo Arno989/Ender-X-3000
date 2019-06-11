@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" autoUpload="Always" serverName="arno@arno989:22">
     <serverData>
+      <paths name="arno@arno989:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/arno/Ender-X-3000/www/backend" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="dp-user@arno989:22">
         <serverdata>
           <mappings>
@@ -9,7 +16,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="rpi-arno">
+      <paths name="pi@arno989:22">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -17,5 +24,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

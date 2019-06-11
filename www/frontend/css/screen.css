@@ -1,3 +1,7 @@
+.future {
+	display: none;
+}
+
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -540,8 +544,7 @@ a:focus {
 .c-video {
 }
 
-.c-video--lg {
-}
+
 
 /*
     Component: controls
@@ -565,6 +568,7 @@ a:focus {
 	font-size: 21px;
 	font-weight: 200;
 	margin: 0 6px;
+	cursor: pointer;
 }
 
 .c-button--control{
@@ -576,6 +580,19 @@ a:focus {
 	font-size: 16px;
 	font-weight: 200;
 	margin: 6px 0;
+	cursor: pointer;
+	text-align: center;
+}
+
+.c-button--distance:hover,
+.c-button--distance:focus,
+.c-button--control:hover,
+.c-button--control:focus {
+	box-shadow: inset 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.c-button--pointer{
+	cursor: pointer;
 }
 
 .c-file {
@@ -618,6 +635,7 @@ a:focus {
 
 .c-file--icon {
 	margin: 4px;
+	cursor: pointer;
 }
 
 /*

@@ -52,7 +52,7 @@ class Database:
             cursor.close()
         except Exception as e:
             print(e)
-            return f'Error: {e}'
+            return e
         conn.close()
 
         return cursor.lastrowid
@@ -68,7 +68,7 @@ class Database:
             cursor.close()
         except Exception as e:
             print(e)
-            return f'Error: {e}'
+            return e
 
         conn.close()
 
