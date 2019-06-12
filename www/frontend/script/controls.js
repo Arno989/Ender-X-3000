@@ -107,8 +107,8 @@ const enableSocketIo = () => {
 const init = function() {
 	console.log('bitch ass');
 	enableSocketIo();
-	listenToControls();
 	enablestream();
+	listenToControls();
 };
 
 document.addEventListener('DOMContentLoaded', init);
