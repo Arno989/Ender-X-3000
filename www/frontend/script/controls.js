@@ -28,7 +28,7 @@ const listenToControls = () => {
 	const zHome = document.querySelector('.js-z-home');
 	const zDown = document.querySelector('.js-z-down');
 
-	const btns = document.querySelector('.c-button--distance');
+	const btns = document.querySelectorAll('.js-button-distance');
 
 	const value = document.querySelector('.js-value');
 	const extrude = document.querySelector('.js-extrude');
@@ -70,7 +70,7 @@ const listenToControls = () => {
 		socket.emit('z-down', distance);
 	});
 
-	for (const btn in btns) {
+	for (const btn of btns) {
 		btn.addEventListener('click', () => {
 			distance = btn.getAttribute('value');
 		});
@@ -105,7 +105,6 @@ const enableSocketIo = () => {
 };
 
 const init = function() {
-	console.log('bitch ass');
 	enableSocketIo();
 	enablestream();
 	listenToControls();
