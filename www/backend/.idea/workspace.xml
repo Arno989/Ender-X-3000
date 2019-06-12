@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938c3ca7-05e7-4c25-bb83-47c84d4a937e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/Datacom.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/App.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/SerialCommunication.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/CCS811.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/DHT11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/I2C_LCD.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/OneWire.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/PWM.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/modules/SaveData.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/test/ccs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/test/dbtest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/test/pwmtest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datacom/test/serial comm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../startup-project.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../startup-project.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pages/controls.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/controls.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/script/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/script/controls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Serialcom.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Serialcom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DatabaseConn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/sensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/SensorReadings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,55 +61,50 @@
     </expand>
     <select />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/modules/Serialcom.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-888">
-                    <caret line="5" selection-start-line="5" selection-end-line="5" />
-                    <folding>
-                      <element signature="e#0#13#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="124" column="17" lean-forward="true" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
-              <folding>
-                <element signature="e#10#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/sensor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.444974">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="636">
+                  <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#10#51#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/modules/SensorReadings.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="312">
+                  <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/modules/Serialcom.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="406">
+                  <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -100,6 +118,7 @@
       <find>self.database</find>
       <find>conn</find>
       <find>Serial</find>
+      <find>delchars</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -115,13 +134,16 @@
         <option value="$PROJECT_DIR$/modules/database.py" />
         <option value="$PROJECT_DIR$/modules/sensor.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/modules/DatabaseConn.py" />
+        <option value="$PROJECT_DIR$/App.py" />
         <option value="$PROJECT_DIR$/modules/Serialcom.py" />
+        <option value="$PROJECT_DIR$/modules/SensorReadings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1199" />
-    <option name="width" value="728" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -130,7 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,6 +168,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,7 +201,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="App" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -192,7 +214,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Arno\OneDrive - Hogeschool West-Vlaanderen\Project 1\Git\Ender-X-3000\www\backend\App.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,18 +255,19 @@
       <workItem from="1560180422746" duration="943000" />
       <workItem from="1560282992432" duration="6375000" />
       <workItem from="1560332668389" duration="12000" />
-      <workItem from="1560332770842" duration="1610000" />
+      <workItem from="1560332770842" duration="2444000" />
+      <workItem from="1560364609654" duration="6371000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41576000" />
+    <option name="totallyTimeSpent" value="48781000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1199" y="0" width="728" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30538923" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.082670905" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -260,7 +283,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3293556" />
+      <window_info anchor="bottom" id="File Transfer" order="13" visible="true" weight="0.22434367" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -303,16 +326,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b34aade0-1b69-4e19-8310-fdd7fac345e2/console.sql" />
-    <entry file="file://$PROJECT_DIR$/modules/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-          <folding>
-            <element signature="e#26#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/I2C_LCD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -330,33 +343,49 @@
     <entry file="file://$PROJECT_DIR$/modules/CCS811.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/sensor.py">
+    <entry file="file://$PROJECT_DIR$/modules/DatabaseConn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+        <state relative-caret-position="384">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#26#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/App.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="124" column="17" lean-forward="true" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
+        <state relative-caret-position="636">
+          <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
           <folding>
             <element signature="e#10#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Semester 2/Data Communication/Week 3/uhm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/SensorReadings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/Serialcom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-888">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="406">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
         </state>
       </provider>
     </entry>

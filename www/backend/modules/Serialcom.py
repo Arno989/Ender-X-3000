@@ -8,7 +8,7 @@ class Serialcom:
         try:
             port = "/dev/ttyUSB0"
             self.s1 = serial.Serial(port, 115200)
-            sleep(2)
+            sleep(2)  # wait till init message of printer
             self.s1.flushInput()
         except Exception as e:
             print(e)
@@ -16,11 +16,8 @@ class Serialcom:
         self.delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
 
     def send_command(self, c):
-
-        print(c)
         command = c["command"]
 
-        gcode = ""
         if command == 'G28':
             gcode = 'G28'
             if 'x' in c['axis']:
@@ -44,29 +41,22 @@ class Serialcom:
 
             gcode += str(c['value'])
 
-        elif command == 'M18':
-            gcode = 'M18'
-
-        elif command == 'M106':
-            gcode = 'M106'
-
-        elif command == 'M107':
-            gcode = 'M107'
-
         else:
-            print("no known command or 'command' is null")
             gcode = c['command']
 
-        print("send: ", '{}\n'.format(gcode).encode())
         try:
+            print("Sent: ", '{}\n'.format(gcode).encode())
             self.s1.write('{}\n'.format(gcode).encode())
-            sleep(0.02)
+        except Exception as e:
+            print("Serial send error: ", e)
+        sleep(0.01)
 
+        try:
             if self.s1.inWaiting() > 0:
                 inputValue = self.s1.readline()
                 s = str(inputValue.decode())
                 if s.strip():
-                    print("ack: ", s.strip())
+                    print("Response: ", s.strip())
                     if s.strip() == "ok":
                         return s.strip()
                     else:
@@ -74,5 +64,3 @@ class Serialcom:
                         return s
         except Exception as e:
             print('Response Decoding Error: ', e)
-
-# setup serial communication with printer

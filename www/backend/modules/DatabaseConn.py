@@ -73,3 +73,19 @@ class Database:
         conn.close()
 
         return cursor.rowcount
+
+'''
+tb = temp bed
+th = temp hotend
+ta = temp ambient
+tbg = temp bed goal
+thg = temp hotend goal
+tag = temp ambient goal
+tp = temp fillament
+
+hp = humidity printer
+hf = humidity fillament
+
+co2 = co2
+tvo = tvoc
+'''
