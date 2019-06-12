@@ -108,6 +108,7 @@ const init = function() {
 	console.log('bitch ass');
 	enableSocketIo();
 	listenToControls();
+	enablestream();
 };
 
 document.addEventListener('DOMContentLoaded', init);

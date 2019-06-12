@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938c3ca7-05e7-4c25-bb83-47c84d4a937e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/CCS811.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/DHT11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/I2C_LCD.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/OneWire.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/PWM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/Serialcom.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/sensor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Datacom/SerialCommunication.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datacom/SerialCommunication.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datamanagement/site.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datamanagement/site.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Datamanagement/site.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../../Datamanagement/site.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/pages/controls.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/pages/controls.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/script/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/script/controls.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="125" column="22" lean-forward="true" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+            <state relative-caret-position="3000">
+              <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
               <folding>
                 <element signature="e#10#51#0" expanded="true" />
               </folding>
@@ -63,11 +53,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/sensor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="648">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="34" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/Serialcom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="96">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -128,6 +121,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,7 +138,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,23 +304,25 @@
       <workItem from="1560171719197" duration="29000" />
       <workItem from="1560171934121" duration="1146000" />
       <workItem from="1560180422746" duration="943000" />
-      <workItem from="1560282992432" duration="5846000" />
+      <workItem from="1560282992432" duration="6375000" />
+      <workItem from="1560332668389" duration="12000" />
+      <workItem from="1560332770842" duration="637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39425000" />
+    <option name="totallyTimeSpent" value="40603000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15341812" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07675906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3078759" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3078759" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -407,29 +402,32 @@
     <entry file="file://$PROJECT_DIR$/modules/CCS811.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/sensor.py">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="3000">
+          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+          <folding>
+            <element signature="e#10#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/Serialcom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="96">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/modules/sensor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="125" column="22" lean-forward="true" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+        <state relative-caret-position="648">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="34" selection-end-column="34" />
           <folding>
-            <element signature="e#10#51#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
