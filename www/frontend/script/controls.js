@@ -39,11 +39,11 @@ const listenToControls = () => {
 	const fanOff = document.querySelector('.js-fanoff');
 
 	xyUp.addEventListener('click', () => {
-		socket.emit('X', distance, true);
+		socket.emit('Y', distance, true);
 	});
 
 	xyLeft.addEventListener('click', () => {
-		socket.emit('Y', distance, false);
+		socket.emit('X', distance, false);
 	});
 
 	xyHome.addEventListener('click', () => {
@@ -51,11 +51,11 @@ const listenToControls = () => {
 	});
 
 	xyRight.addEventListener('click', () => {
-		socket.emit('Y', distance, true);
+		socket.emit('X', distance, true);
 	});
 
 	xyDown.addEventListener('click', () => {
-		socket.emit('X', distance, false);
+		socket.emit('Y', distance, false);
 	});
 
 	zUp.addEventListener('click', () => {

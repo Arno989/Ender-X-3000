@@ -30,11 +30,13 @@ def logConnect():
 
 @socketio.on('X')
 def mvx(distance, direction):
+    print(distance, direction)
     c = getcoords()
+    print(c)
     if direction:
         value = distance + c[0]
     else:
-        value = distance + c[0]
+        value = distance - c[0]
     serial.send_command({'command': 'G1 X' + str(value)})
     socketio.emit('ack')
 
@@ -45,7 +47,7 @@ def mvy(distance, direction):
     if direction:
         value = distance + c[1]
     else:
-        value = distance + c[1]
+        value = distance - c[1]
     serial.send_command({'command': 'G1 Y' + str(value)})
     socketio.emit('ack')
 
@@ -56,7 +58,7 @@ def mvz(distance, direction):
     if direction:
         value = distance + c[2]
     else:
-        value = distance + c[2]
+        value = distance - c[2]
     serial.send_command({'command': 'G1 Z' + str(value)})
     socketio.emit('ack')
 
@@ -67,7 +69,7 @@ def mve(distance, direction):
     if direction:
         value = distance + c[3]
     else:
-        value = distance + c[3]
+        value = distance - c[3]
     serial.send_command({'command': 'G1 E' + str(value)})
     socketio.emit('ack')
 
@@ -103,7 +105,7 @@ def fanoff():
 
 
 def getcoords():
-    return serial.send_command({'command': 'M114'})
+    return serial.send_command({'command': 'M114 ?'})
 
 
 # ROUTES
