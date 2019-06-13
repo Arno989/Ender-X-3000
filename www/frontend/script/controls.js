@@ -39,35 +39,35 @@ const listenToControls = () => {
 	const fanOff = document.querySelector('.js-fanoff');
 
 	xyUp.addEventListener('click', () => {
-		socket.emit('xy-up', distance);
+		socket.emit('X', distance, true);
 	});
 
 	xyLeft.addEventListener('click', () => {
-		socket.emit('xy-left', distance);
+		socket.emit('Y', distance, false);
 	});
 
 	xyHome.addEventListener('click', () => {
-		socket.emit('xy-home', distance);
+		socket.emit('xy-home');
 	});
 
 	xyRight.addEventListener('click', () => {
-		socket.emit('xy-right', distance);
+		socket.emit('Y', distance, true);
 	});
 
 	xyDown.addEventListener('click', () => {
-		socket.emit('xy-down', distance);
+		socket.emit('X', distance, false);
 	});
 
 	zUp.addEventListener('click', () => {
-		socket.emit('z-up', distance);
+		socket.emit('Z', distance, true);
 	});
 
 	zHome.addEventListener('click', () => {
-		socket.emit('z-home', distance);
+		socket.emit('z-home');
 	});
 
 	zDown.addEventListener('click', () => {
-		socket.emit('z-down', distance);
+		socket.emit('Z', distance, false);
 	});
 
 	for (const btn of btns) {
@@ -77,12 +77,12 @@ const listenToControls = () => {
 	}
 
 	extrude.addEventListener('click', () => {
-		socket.emit('extrude', value.getAttribute('value'));
+		socket.emit('E', value.getAttribute('value'), true);
 		console.log(value.getAttribute('value'));
 	});
 
 	retract.addEventListener('click', () => {
-		socket.emit('retract', value.getAttribute('value'));
+		socket.emit('E', value.getAttribute('value'), false);
 	});
 
 	motorsOff.addEventListener('click', () => {

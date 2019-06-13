@@ -13,7 +13,8 @@ class Serialcom:
         except Exception as e:
             print(e)
 
-        self.delchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
+        self.tempchars = dict.fromkeys(map(ord, 'okT:/B@'), None)
+        self.coordchars = dict.fromkeys(map(ord, 'okC:XYZE'), None)
 
     def send_command(self, c):
         command = c["command"]
@@ -36,9 +37,6 @@ class Serialcom:
             elif 'z' in c['axis']:
                 gcode += ' Z'
 
-            if 'negative' in c.keys() and c['negative']:
-                gcode += '-'
-
             gcode += str(c['value'])
 
         else:
@@ -59,8 +57,11 @@ class Serialcom:
                     print("Response: ", s.strip())
                     if s.strip() == "ok":
                         return s.strip()
-                    else:
-                        s = list(map(float, s.translate(self.delchars).strip().split(' ')))
+                    elif(s.startswith('ok T:')):
+                        s = list(map(float, s.translate(self.tempchars).strip().split(' ')))
+                        return s
+                    elif (s.startswith('ok C:')):
+                        s = list(map(float, s.translate(self.coordchars).strip().split(' ')))
                         return s
         except Exception as e:
             print('Response Decoding Error: ', e)

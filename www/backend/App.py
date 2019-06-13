@@ -22,6 +22,90 @@ sensors = Sensor(conn, serial)
 endpoint = '/api/v1'
 
 
+# socket events
+@socketio.on('connect')
+def logConnect():
+    print("connected")
+
+
+@socketio.on('X')
+def mvx(distance, direction):
+    c = getcoords()
+    if direction:
+        value = distance + c[0]
+    else:
+        value = distance + c[0]
+    serial.send_command({'command': 'G1 X' + str(value)})
+    socketio.emit('ack')
+
+
+@socketio.on('Y')
+def mvy(distance, direction):
+    c = getcoords()
+    if direction:
+        value = distance + c[1]
+    else:
+        value = distance + c[1]
+    serial.send_command({'command': 'G1 Y' + str(value)})
+    socketio.emit('ack')
+
+
+@socketio.on('Z')
+def mvz(distance, direction):
+    c = getcoords()
+    if direction:
+        value = distance + c[2]
+    else:
+        value = distance + c[2]
+    serial.send_command({'command': 'G1 Z' + str(value)})
+    socketio.emit('ack')
+
+
+@socketio.on('E')
+def mve(distance, direction):
+    c = getcoords()
+    if direction:
+        value = distance + c[3]
+    else:
+        value = distance + c[3]
+    serial.send_command({'command': 'G1 E' + str(value)})
+    socketio.emit('ack')
+
+
+@socketio.on('xy-home')
+def mvxyhome():
+    serial.send_command({'command': 'G28 XY'})
+    socketio.emit('ack')
+
+
+@socketio.on('z-home')
+def mvzhome():
+    serial.send_command({'command': 'G28 Z'})
+    socketio.emit('ack')
+
+
+@socketio.on('motorsoff')
+def motorsoff():
+    serial.send_command({'command': 'M18'})
+    socketio.emit('ack')
+
+
+@socketio.on('fanon')
+def fanon():
+    serial.send_command({'command': 'M106 S255'})
+    socketio.emit('ack')
+
+
+@socketio.on('fanoff')
+def fanoff():
+    serial.send_command({'command': 'M107'})
+    socketio.emit('ack')
+
+
+def getcoords():
+    return serial.send_command({'command': 'M114'})
+
+
 # ROUTES
 @app.route(endpoint + '/users', methods=['POST', 'GET'])
 def users():
@@ -97,90 +181,6 @@ def fillamentTemp():
             return jsonify(result), 200
         except:
             return jsonify(error=Exception), 400
-
-
-# socket events
-@socketio.on('connect')
-def logConnect():
-    print("connected")
-
-
-@socketio.on('xy-up')
-def mvxyup(distance):
-    serial.send_command({'command': 'G1', 'axis': 'y', 'value': distance})
-    socketio.emit('ack')
-
-
-@socketio.on('xy-left')
-def mvxyleft(distance):
-    serial.send_command({'command': 'G1', 'axis': 'x', 'value': distance, 'negative': True})
-    socketio.emit('ack')
-
-
-@socketio.on('xy-home')
-def mvxyhome(distance):
-    serial.send_command({'command': 'G28', 'axis': 'xy', 'value': distance})
-    socketio.emit('ack')
-
-
-@socketio.on('xy-right')
-def mvxyright(distance):
-    serial.send_command({'command': 'G1', 'axis': 'x', 'value': distance})
-    socketio.emit('ack')
-
-
-@socketio.on('xy-down')
-def mvxydown(distance):
-    serial.send_command({'command': 'G1', 'axis': 'y', 'value': distance, 'negative': True})
-    socketio.emit('ack')
-
-
-@socketio.on('z-up')
-def mvzup(distance):
-    serial.send_command({'command': 'G1', 'axis': 'z', 'value': distance})
-    socketio.emit('ack')
-
-
-@socketio.on('z-home')
-def mvzhome(distance):
-    serial.send_command({'command': 'G28', 'axis': 'z', 'value': distance})
-    socketio.emit('ack')
-
-
-@socketio.on('z-down')
-def mvzdown(distance):
-    serial.send_command({'command': 'G1', 'axis': 'z', 'value': distance, 'negative': True})
-    socketio.emit('ack')
-
-
-@socketio.on('extrude')
-def extrude(value):
-    serial.send_command({'command': 'G1', 'axis': 'e', 'value': value})
-    socketio.emit('ack')
-
-
-@socketio.on('retract')
-def retract(value):
-    serial.send_command({'command': 'G1', 'axis': 'e', 'value': value, 'negative': True})
-    socketio.emit('ack')
-
-
-@socketio.on('motorsoff')
-def motorsoff():
-    serial.send_command({'command': 'M18'})
-    socketio.emit('ack')
-
-
-@socketio.on('fanon')
-def fanon():
-    serial.send_command({'command': 'M106'})
-    socketio.emit('ack')
-
-
-@socketio.on('fanoff')
-def fanoff():
-    serial.send_command({'command': 'M107'})
-    socketio.emit('ack')
 
 
 # Start app
