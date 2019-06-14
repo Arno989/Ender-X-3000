@@ -43,9 +43,9 @@ class Database:
     def set_data(self, sql, params=None):
         conn = self.mysql.connect()
         cursor = conn.cursor()
-        print("Creating / Updating data")
+        # print("Creating / Updating data")
         try:
-            print(sql)
+            # print(sql)
             cursor.execute(sql, params)
             conn.commit()
             result = cursor.fetchall()

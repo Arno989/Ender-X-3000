@@ -78,7 +78,6 @@ const listenToControls = () => {
 
 	extrude.addEventListener('click', () => {
 		socket.emit('E', value.getAttribute('value'), true);
-		console.log(value.getAttribute('value'));
 	});
 
 	retract.addEventListener('click', () => {

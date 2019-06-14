@@ -32,11 +32,10 @@ def logConnect():
 def mvx(distance, direction):
     print(distance, direction)
     c = getcoords()
-    print(c)
     if direction:
-        value = distance + c[0]
+        value = float(c[0]) + float(distance)
     else:
-        value = distance - c[0]
+        value = float(c[0]) - float(distance)
     serial.send_command({'command': 'G1 X' + str(value)})
     socketio.emit('ack')
 
@@ -45,9 +44,9 @@ def mvx(distance, direction):
 def mvy(distance, direction):
     c = getcoords()
     if direction:
-        value = distance + c[1]
+        value = float(c[1]) + float(distance)
     else:
-        value = distance - c[1]
+        value = float(c[1]) - float(distance)
     serial.send_command({'command': 'G1 Y' + str(value)})
     socketio.emit('ack')
 
@@ -56,9 +55,9 @@ def mvy(distance, direction):
 def mvz(distance, direction):
     c = getcoords()
     if direction:
-        value = distance + c[2]
+        value = float(c[2]) + float(distance)
     else:
-        value = distance - c[2]
+        value = float(c[2]) - float(distance)
     serial.send_command({'command': 'G1 Z' + str(value)})
     socketio.emit('ack')
 
@@ -67,9 +66,9 @@ def mvz(distance, direction):
 def mve(distance, direction):
     c = getcoords()
     if direction:
-        value = distance + c[3]
+        value = float(c[3]) + float(distance)
     else:
-        value = distance - c[3]
+        value = float(c[3]) - float(distance)
     serial.send_command({'command': 'G1 E' + str(value)})
     socketio.emit('ack')
 
@@ -105,7 +104,9 @@ def fanoff():
 
 
 def getcoords():
-    return serial.send_command({'command': 'M114 ?'})
+    response = serial.send_command({'command': 'M114'})
+    print(response)
+    return response
 
 
 # ROUTES

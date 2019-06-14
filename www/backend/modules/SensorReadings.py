@@ -21,9 +21,9 @@ class Sensor(Thread):  # Parent van Thread
         self.CCS811 = CCS811()
         self.DS18B20 = OneWire()
 
-        self.R = PWM(16)
+        self.R = PWM(21)
         self.G = PWM(20)
-        self.B = PWM(21)
+        self.B = PWM(16)
 
         self.printerdht = DHT11(pin=13)
         self.filamentdht = DHT11(pin=19)
@@ -37,17 +37,13 @@ class Sensor(Thread):  # Parent van Thread
             ip1 = str(ip[0])[2:-1]
             self.LCD.lcd_string(ip1, 1)
         except Exception as e:
-            print("Lcd Error: ", e)
+            print("Lcd IP Error: ", e)
 
         GPIO.setmode(GPIO.BCM)
 
         self.R.InitPWM()
         self.G.InitPWM()
         self.B.InitPWM()
-
-        self.R.ChangeDutyCycle(80)
-        self.G.ChangeDutyCycle(80)
-        self.B.ChangeDutyCycle(80)
 
         GPIO.setup(self.TCST2103, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.relais, GPIO.OUT)
@@ -100,7 +96,8 @@ class Sensor(Thread):  # Parent van Thread
                     self.save_sensor_data('co2', readingccs[0])
                     self.save_sensor_data('tvo', readingccs[1])
             except Exception as e:
-                print("CCS881 error: ", e)
+                # print("CCS881 error: ", e)
+                pass
 
             print("-----")
             pass
