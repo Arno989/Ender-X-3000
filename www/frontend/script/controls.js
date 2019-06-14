@@ -5,6 +5,7 @@ const socket_IP = `${window.location.host}:5000`;
 let socket;
 
 var distance = 10;
+var e_value = 10;
 //#region ***********  Callback - HTML Generation (After select) ***********
 
 //#endregion
@@ -77,11 +78,12 @@ const listenToControls = () => {
 	}
 
 	extrude.addEventListener('click', () => {
-		socket.emit('E', value.getAttribute('value'), true);
+		socket.emit('E', value.value, true);
+		
 	});
 
 	retract.addEventListener('click', () => {
-		socket.emit('E', value.getAttribute('value'), false);
+		socket.emit('E', value.value, false);
 	});
 
 	motorsOff.addEventListener('click', () => {
