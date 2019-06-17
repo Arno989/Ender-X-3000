@@ -92,8 +92,8 @@
 					<div class="c-header__nav">
 						<nav class="c-nav">
 							<ul class="o-list c-nav__list u-m-clear">
-								<li class="c-nav__item"><a class="c-nav__link" href="/index.html">Home</a></li>
-								<li class="c-nav__item is-selected"><a class="c-nav__link" href="/pages/graphs.html">Graphs</a></li>
+								<li class="c-nav__item future"><a class="c-nav__link" href="/index.html">Home</a></li>
+								<li class="c-nav__item is-selected"><a class="c-nav__link" href="/pages/temperatures.html">Temperatures</a></li>
 								<li class="c-nav__item"><a class="c-nav__link" href="/pages/controls.html">Controls</a></li>
 								<li class="c-nav__item"><a class="c-nav__link" href="/pages/terminal.html">Terminal</a></li>
 							</ul>
@@ -130,9 +130,25 @@
 							</div>
 							<div class="o-layout__item u-1-of-2">
 								<div class="o-graph">
-									<h2>Humidities</h2>
+									<h2>Temperature controls</h2>
 									<div>
-										<canvas id="humidity" width="760px" height="410px"></canvas>
+										<table class="c-table">
+											<tr>
+												<th></th>
+												<th class="c-table--vheader">Actual</th>
+												<th class="c-table--vheader">Target</th>
+											</tr>
+											<tr>
+												<td class="c-table--hheader">Hotend</td>
+												<td class="c-table--item js-hotend-actual">23</td>
+												<td class="c-table--item js-hotend-target"><input type="number" name="hotend-target" id="hotend-target" class="c-table--input"/></td>
+											</tr>
+											<tr>
+												<td class="c-table--hheader">Bed</td>
+												<td class="c-table--item js-bed-actual">23</td>
+												<td class="c-table--item js-bed-target"><input type="number" name="bed-target" id="bed-target" class="c-table--input"/></td>
+											</tr>
+										</table>
 									</div>
 									<!-- <div class="o-list o-layout o-layout--justify-center ">
 										<div class="o-layout-item c-lead--m"><p class="u-mb-clear">Optimal value: 0%</p></div>
@@ -142,8 +158,27 @@
 						</div>
 					</article>
 
-					<article class="o-section u-1-of-1">
+					<article class="o-section">
 						<div class="o-layout o-layout--gutter o-layout--align-start">
+							<div class="o-layout__item u-1-of-2">
+								<div class="o-graph">
+									<h2>Humidities</h2>
+									<div>
+										<canvas id="humidity" width="760px" height="410px"></canvas>
+									</div>
+									<!-- <div class="o-list o-layout o-layout--justify-center ">
+											<div class="o-layout-item c-lead--m"><p class="u-mb-clear">Optimal value: 0%</p></div>
+										</div> -->
+								</div>
+							</div>
+							<div class="o-layout__item u-1-of-2">
+								<div class="o-graph"></div>
+							</div>
+						</div>
+					</article>
+
+					<article class="o-section u-1-of-1 future">
+						<div class="o-layout o-layout--gutter o-layout--align-start ">
 							<div class="o-layout__item u-1-of-1">
 								<div class="o-graph">
 									<h2>Gasses</h2>

@@ -1,5 +1,5 @@
 .future {
-	display: none;
+	display: none !important;
 }
 
 /*------------------------------------*\
@@ -636,6 +636,34 @@ a:focus {
 	margin: 4px;
 	cursor: pointer;
 }
+
+
+.c-table{
+	font-size: 1.2em;
+	text-align: right;
+}
+
+.c-table--vheader{
+	padding-left: 4em;
+	font-weight: 500;
+}
+
+.c-table--hheader{
+	font-weight: 500;
+	padding: 8px 0;
+	text-align: left;
+}
+
+.c-table--item{
+}
+
+.c-table--input{
+	border: none;
+	background-color: #f8f9fb;
+	text-align: right;
+	/* padding-right: 4px; */
+}
+
 
 /*
     Component: Lead

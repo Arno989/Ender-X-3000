@@ -49,15 +49,19 @@ class Serialcom:
             self.s1.write('{}\n'.format(gcode).encode())
         except Exception as e:
             print("Serial send error: ", e)
-        sleep(0.005)
+        sleep(0.01)
 
         try:
             if self.s1.inWaiting() > 0:
+                echos = []
                 while self.s1.inWaiting():
                     inputValue = self.s1.readline()
                     if "echo" in inputValue.decode():
-                        inputValue = self.s1.readline()
-                    self.s1.flushInput()
+                        echos.append(self.s1.readline())
+                    elif inputValue == 'ok':
+                        pass
+                    else:
+                        self.s1.flushInput()
 
                 s = str(inputValue.decode())
                 if s.strip():

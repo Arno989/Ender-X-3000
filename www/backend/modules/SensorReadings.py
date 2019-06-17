@@ -5,7 +5,7 @@ from modules.PWM import PWM
 from modules.OneWire import OneWire
 
 from RPi import GPIO
-from subprocess import check_output
+import subprocess
 from threading import Thread
 
 
@@ -31,13 +31,21 @@ class Sensor(Thread):  # Parent van Thread
         self.hysteresis = 2
 
         try:
+            cmd = "ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
+            ps = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            output = ps.communicate()
+            self.local_ip = output[0].decode('ascii')[0:-1]
+        except Exception as e:
+            print("Ip Error: ", e)
+
+        try:
             self.LCD = I2C_LCD()
             self.LCD.lcd_init()
-            ip = check_output(['hostname', '--all-ip-addresses']).split()
-            ip1 = str(ip[0])[2:-1]
-            self.LCD.lcd_string(ip1, 1)
+            # ip = subprocess.check_output(['hostname', '--all-ip-addresses']).split()
+            # ip1 = str(ip[0])[2:-1]
+            self.LCD.lcd_string(self.local_ip, 1)
         except Exception as e:
-            print("Lcd IP Error: ", e)
+            print("Lcd Error: ", e)
 
         GPIO.setmode(GPIO.BCM)
 

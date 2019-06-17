@@ -284,5 +284,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	console.info('DOM geladen');
 	getPrinterTempData();
 	getHumidityData();
-	getGasData();
+	//getGasData();
 });

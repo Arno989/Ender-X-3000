@@ -69,7 +69,7 @@ def mve(distance, direction):
         value = float(c[3]) + float(distance)
     else:
         value = float(c[3]) - float(distance)
-    serial.send_command({'command': 'G1 E' + str(value)})
+    serial.send_command({'command': 'G1 X0 E' + str(value)})
     socketio.emit('ack')
 
 

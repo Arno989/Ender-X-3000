@@ -18,6 +18,11 @@
 		<script src="/script/checklogin.js"></script>
 
 		<!-- custom scripts -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				window.location = `http://${window.location.host}/pages/controls.html`;
+			}));
+		</script>
 	</head>
 	<body>
 		<!-- navigation -->
@@ -90,7 +95,7 @@
 						<nav class="c-nav">
 							<ul class="o-list c-nav__list u-m-clear">
 								<li class="c-nav__item is-selected"><a class="c-nav__link" href="/index.html">Home</a></li>
-								<li class="c-nav__item"><a class="c-nav__link" href="/pages/graphs.html">Graphs</a></li>
+								<li class="c-nav__item"><a class="c-nav__link" href="/pages/temperatures.html">Temperatures</a></li>
 								<li class="c-nav__item"><a class="c-nav__link" href="/pages/controls.html">Controls</a></li>
 								<li class="c-nav__item"><a class="c-nav__link" href="/pages/terminal.html">Terminal</a></li>
 							</ul>
