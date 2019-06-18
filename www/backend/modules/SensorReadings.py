@@ -3,6 +3,7 @@ from modules.CCS811 import CCS811
 from modules.I2C_LCD import I2C_LCD
 from modules.PWM import PWM
 from modules.OneWire import OneWire
+from time import sleep
 
 from RPi import GPIO
 import subprocess
@@ -31,6 +32,7 @@ class Sensor(Thread):  # Parent van Thread
         self.hysteresis = 2
 
         try:
+            sleep(7.5)
             cmd = "ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
             ps = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             output = ps.communicate()
