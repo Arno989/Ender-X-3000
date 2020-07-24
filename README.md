@@ -1,5 +1,3 @@
-# Ender-X-3000
-Project 1
 # Functionaliteiten
 ## Taakanalyse
 Functionaliteiten van de Ender X-3000
